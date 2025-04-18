@@ -1,4 +1,5 @@
 import './Content.css'
+import ContentBlock from './ContentBlock';
 
 export default function Content() {
     return <>
@@ -14,10 +15,10 @@ export default function Content() {
                     <button>Learn more</button>
                 </div>
             </div>
-            <div className='content-div'></div>
-            <div className='content-div'></div>
-            <div className='content-div'></div>
-            <div className='content-div'></div>
+            <ContentBlock />
+            <ContentBlock />
+            <ContentBlock />
+            <ContentBlock />
         </div>
     </>;
 }

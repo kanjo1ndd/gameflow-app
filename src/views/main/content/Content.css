@@ -6,7 +6,7 @@
     justify-content: center;
     position: relative;
     flex-wrap: wrap;
-    gap: 3vw;
+    gap: 5vw;
 }
 
 .content > div:first-child {
@@ -119,7 +119,7 @@
 }
 
 /* Повторные витрины по 6 игр */
-.content-div {
+/* .content-div {
     width: 79.167vw;
     height: 26.528vw;
-}
+} */
