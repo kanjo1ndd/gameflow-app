@@ -1,0 +1,28 @@
+.content {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-wrap: wrap;
+    gap: 3vw;
+}
+
+.content > div:first-child {
+    margin-top: 3vw;
+}
+
+.content > div:last-child {
+    margin-bottom: 3vw;
+}
+
+.first {
+    width: 79.167vw;
+    height: 38.473vw;
+}
+
+.content-div {
+    width: 79.167vw;
+    height: 26.528vw;
+}

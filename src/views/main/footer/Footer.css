@@ -1,0 +1,92 @@
+.block {
+    width: 100%;
+    height: 18.75vw;
+
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    background: 
+    linear-gradient(0deg, rgba(55, 60, 67, 0.9), rgba(55, 60, 67, 0.8)),
+    linear-gradient(
+        90deg,
+        rgba(123, 199, 77, 0.8) 0%,
+        rgba(0, 0, 0, 0) 49.5%,
+        rgba(123, 199, 77, 0.8) 100%
+    );
+}
+
+.footer {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 54.514vw;
+    height: 74.078%;
+    left: 22.778%;
+}
+
+/* Соц. сети */
+.messengers {
+    display: flex;
+    width: 15.665vw;
+    height: 22.50%;
+    gap: 1.389vh;
+}
+
+/* Иконки */
+.messengers i {
+    display: flex;
+    font-size: 2.604vw;
+    color: white;
+}
+
+/* Кнопка вверх */
+.up {
+    display: flex;
+    width: 2.5vw;
+    height: 17.50%;
+    gap: 0.694vw;
+    border-radius: 0.208vw;
+    align-items: center;
+    justify-content: center;
+    border: 0.069vw solid white;
+}
+
+.up i {
+    font-size: 0.95vw;
+    color: white;
+}
+
+.text {
+    display: flex;
+    width: 41.445vw;
+    height: 24%;
+    opacity: 0.8;
+    margin-top: 1.3vw;
+    color: white;
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 0.972vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+
+/* Самый низ */
+.footer-links {
+    display: flex;
+    width: 54.335vw;
+    height: 9.5%;
+    gap: 1.736vw;
+
+    margin-top: auto;
+    color: white;
+
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 1.111vw;
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
