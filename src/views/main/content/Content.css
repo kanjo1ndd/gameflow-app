@@ -1,6 +1,6 @@
 .content {
     width: 100%;
-
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,11 +17,108 @@
     margin-bottom: 3vw;
 }
 
+/* главная витрина первой игры */
 .first {
     width: 79.167vw;
     height: 38.473vw;
+    display: flex;
+    position: relative;
 }
 
+.first-img {
+    width: 64.723vw;
+    height: 100%;
+    background-color: black;
+    border-radius: 1.042vw;
+}
+
+.first-div {
+    width: 25.695vw;
+    height: 100%;
+    border-top-right-radius: 1.042vw;
+    border-bottom-right-radius: 1.042vw;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    background: linear-gradient(180deg, #373C43 0%, #25282D 100%);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    padding: 1.85vw;
+    gap: 2vw;
+}
+
+/* Текст */
+.first-div .text-name {
+    width: 100%;
+    height: auto;
+    color: white;
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 1.806vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+
+.first-div .text-update {
+    width: 100%;
+    height: auto;
+    color: white;
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 1.111vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+
+/* Картинки */
+
+.first-div .img {
+    width: 21.944vw;
+    height: 28.881%;
+    border-radius: 0.694vw;
+
+    background-color: black;
+}
+
+.first-div  .price {
+    width: 12.292vw;
+    height: 3.43%;
+
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 1.111vw;
+    line-height: 250%;
+    color:rgba(123, 199, 77, 1);
+}
+
+.first div button {
+    width: 7.431vw;
+    height: 2.709vw;
+    gap: 0.569vw;
+    border-radius: 0.285vw;
+    padding: 0.6vw;
+
+    background: rgba(123, 199, 77, 1);
+    color: rgba(34, 40, 49, 1);
+    border: none;
+
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 1.111vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+/* Повторные витрины по 6 игр */
 .content-div {
     width: 79.167vw;
     height: 26.528vw;
