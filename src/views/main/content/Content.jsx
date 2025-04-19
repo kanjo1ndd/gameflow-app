@@ -1,5 +1,6 @@
 import './Content.css'
-import ContentBlock from './ContentBlock';
+import ContentBlock, { Conbl } from './ContentBlock';
+import ContentSale, { ConDeals } from './ContentSale';
 
 export default function Content() {
     return <>
@@ -16,6 +17,9 @@ export default function Content() {
                 </div>
             </div>
             <ContentBlock />
+            <Conbl/>
+            <ContentSale />
+            <ConDeals />
             <ContentBlock />
             <ContentBlock />
             <ContentBlock />

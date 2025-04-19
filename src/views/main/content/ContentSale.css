@@ -1,74 +1,46 @@
+
 /* Для 6-ти иконных */
-
-.content-div {
-    width: 79.167vw;
-    height: 26.528vw;
-
+.card-pricing {
     display: flex;
-    position: relative;
-    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
 }
 
-.category {
-    color: white;
-
-    font-family: Roboto;
-    font-weight: 900;
-    font-size: 1.389vw;
-    line-height: 100%;
-    letter-spacing: 0%;
-}
-
-.cards {
-    height: 82.984%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.card {
-    background-color: transparent;
-    width: 12.292vw;
-    height: 100%;
+.card-pricing .prices {
     display: flex;
     flex-direction: column;
-    border: none;
-    justify-content: space-between;
 }
 
-.card-img {
-    width: 100%;
-    height: 74.452%;
-    background-color: black;
-    border-radius: 0.486vw;
-}
-
-.card-subtitle {
-    color: rgba(238, 238, 238, 0.7);
-
+.discount {
+    background: rgba(123, 199, 77, 1);
     font-family: Roboto;
     font-weight: 400;
-    font-size: 0.833vw;
+    font-size: 1.111vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    padding: 0.208vw 0.486vw;
+    border-radius: 1.389vw;
+}
+
+.old-price {
+    color: rgba(238, 238, 238, 0.7);
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 1.111vw;
+    text-decoration: line-through;
+    text-align: right;
     line-height: 100%;
     letter-spacing: 0%;
     vertical-align: middle;
 }
 
-.card-title {
-    color: white;
-    font-weight: bold;
-    font-size: 1.111vw;
-    font-family: Roboto;
-    font-weight: 700;
-    line-height: 100%;
-    letter-spacing: 0%;
-}
-
-.card-price {
+.new-price {
     color: white;
     font-family: Roboto;
+    font-size: 0.972vw;
     font-weight: 600;
-    font-size: 1.111vw;
+    text-align: right;
     line-height: 100%;
     letter-spacing: 0%;
     vertical-align: middle;
@@ -79,30 +51,30 @@
 
 /* Для 3-ех иконных */
 
-.conbl {
+.con-deals {
     width: 79.167vw;
-    height: 26.945vw;
+    height: 23.473vw;
 
     display: flex;
     position: relative;
     justify-content: space-between;
 }
 
-.conbl div {
+.con-deals div {
     width: 25.625vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.conbl div .img {
+.con-deals .img-deal {
     width: 100%;
-    height: 53.353%;
+    height: 61.246%;
     background-color: black;
     border-radius: 0.694vw;
 }
 
-.conbl div .name {
+.con-deals .name-deal {
     color: white;
     font-family: Roboto;
     font-weight: 700;
@@ -112,34 +84,48 @@
     vertical-align: middle;
 }
 
-.conbl div .description {
-
-    color: rgba(238, 238, 238, 0.7);
-
-    font-family: Roboto;
-    font-weight: 400;
-    font-size: 0.972vw;
-    line-height: 100%;
-    letter-spacing: 0%;
+.con-deals .prices-sale {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: unset;
+    gap: 1vw;
 }
 
-.conbl div button {
-    width: 9.375vw;
-    border-radius: 0.285vw;
-    gap: 0.347vw;
-    padding: 0.694vw;
-
-    border: none;
-    background: rgba(57, 62, 70, 1);
-    color: white;
-
+.con-deals .discount-deal {
+    width: auto;
+    background: rgba(123, 199, 77, 1);
     font-family: Roboto;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 1.111vw;
     line-height: 100%;
     letter-spacing: 0%;
     vertical-align: middle;
+    padding: 0.208vw 0.486vw;
+    border-radius: 1.389vw;
+}
 
+.con-deals .old-price-deal {
+    width: auto;
+    color: rgba(238, 238, 238, 0.7);
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 1.111vw;
+    text-decoration: line-through;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+
+.con-deals .new-price-deal {
+    width: auto;
+    color: white;
+    font-family: Roboto;
+    font-size: 1.111vw;
+    font-weight: 600;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
 }
 
 /* Для 3-ех иконных */
