@@ -23,7 +23,7 @@ export default function ContentSale() {
 export function ConSale() {
     return <>
         <div className='card'>
-            <div className='card-img'></div> {/* изображение */}
+            <div className='card-img-sale'></div> {/* изображение */}
             <div className='card-subtitle'>Base Game</div>
             <div className='card-title'>Name</div> {/* название */}
             <div className='card-pricing'>
@@ -54,7 +54,10 @@ export function ConDeals() {
 export function ConDealsCart() {
     return <>
         <div>
-            <div className='img-deal'></div>
+            <div className='img-inscription'>
+                <div className='img-deal'></div>
+                <div className='inscription'>Deals of the Weak</div>
+            </div>
             <div className='name-deal'>Name</div>
             <div className='prices-sale'>
                 <div className="discount-deal">-33%</div>{/* скидка */}

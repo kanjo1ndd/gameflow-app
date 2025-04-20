@@ -123,8 +123,70 @@
 
 
 
-/*  */
+/* store-mobile */
 
+.con-store-mobile {
+    width: 79.167vw;
+    height: 26.528vw;
 
+    display: flex;
+    position: relative;
+    flex-wrap: nowrap;
+}
 
-/*  */
+.store-img {
+    width: 100%;
+    background-color: black;
+    border-radius: 0.694vw;
+}
+
+.store-main {
+    width: 40.583vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 0.7vw;
+    margin: 2vw;
+}
+
+.store-title {
+    color: white;
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 1.667vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+
+.store-description {
+    color: rgba(238, 238, 238, 0.7);
+
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 1.111vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+.store-main button {
+    display: flex;
+    text-align: center;
+    border-radius: 0.285vw;
+    gap: 0.569vw;
+    padding: 0.794vw;
+
+    border: none;
+    background: rgba(123, 199, 77, 1);
+    color: rgba(34, 40, 49, 1);
+
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 1.111vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+
+}
+/* store-mobile */

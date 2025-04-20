@@ -1,5 +1,5 @@
 import './Content.css'
-import ContentBlock, { Conbl } from './ContentBlock';
+import ContentBlock, { Conbl, ConFree } from './ContentBlock';
 import ContentSale, { ConDeals } from './ContentSale';
 
 export default function Content() {
@@ -20,6 +20,15 @@ export default function Content() {
             <Conbl/>
             <ContentSale />
             <ConDeals />
+            <ConFree />
+            <div className='con-store-mobile'>
+                <div className='store-img'></div>
+                <div className='store-main'>
+                    <div className='store-title'>Vision Store Mobile</div>
+                    <div className='store-description'>Feudal Gotham’s Dark Night, Ninja Knight Batman, and the malicious wildcard Karuta Harley Quinn strike with a vengeance.</div>
+                    <button>Install Mobile <i className="bi bi-box-arrow-up-right"></i></button>
+                </div>
+            </div>
             <ContentBlock />
             <ContentBlock />
             <ContentBlock />

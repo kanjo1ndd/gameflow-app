@@ -55,6 +55,7 @@
 }
 
 .card-title {
+    margin: 0;
     color: white;
     font-weight: bold;
     font-size: 1.111vw;
@@ -143,3 +144,145 @@
 }
 
 /* Для 3-ех иконных */
+
+/* Free carts */
+.con-free {
+    width: 79.167vw;
+    height: 30.625vw;
+    border-radius: 1.389vw;
+
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(180deg, #393E46 0%, #25282D 100%);
+}
+
+.con-free-inner {
+    width: 92.368%;
+    height: 85.8%;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.con-in-free {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.con-in-free div {
+    display: flex;
+    justify-content: unset;
+    gap: 1vw;
+    align-items: center;
+
+    color: white;
+
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 1.389vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+
+}
+
+.con-in-free i {
+    font-size: 2.604vw;
+}
+
+.con-in-free button {
+    white-space: nowrap;
+
+    background-color: unset;
+    color: white;
+    border: 1px solid white;
+
+    opacity: 0.8;
+    border-radius: 0.285vw;
+    border-width: 1px;
+    padding: 0.694vw;
+    gap: 0.569vw;
+
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 1.111vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.con-free-main {
+    height: 77.275%;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+
+.con-free-main div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.img-free-inner {
+    display: flex;
+    position: relative;
+    height: 74%;
+    width: 23.411vw;
+}
+
+.img-free {
+    border-radius: 0.694vw;
+    height: 100%;
+    background-color: black;
+    width: 100%;
+}
+
+.inscription-free {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+
+    background: linear-gradient(90deg, #7BC74D 0%, #A4C092 100%);
+
+    border-bottom-right-radius: 0.694vw;
+    border-bottom-left-radius: 0.694vw;
+    padding: 0.5vw;
+
+    color: rgb(34, 40, 49, 1);
+    text-align: center;
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 1.25vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+
+.name-free {
+    color: white;
+
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 1.389vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+
+.data-free {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 1.111vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+
+    color: rgba(238, 238, 238, 0.7);
+
+}
+/* Free carts */

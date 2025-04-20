@@ -11,6 +11,13 @@
     flex-direction: column;
 }
 
+.card-img-sale {
+    width: 100%;
+    height: 72.44%;
+    background-color: black;
+    border-radius: 0.486vw;
+}
+
 .discount {
     background: rgba(123, 199, 77, 1);
     font-family: Roboto;
@@ -27,7 +34,7 @@
     color: rgba(238, 238, 238, 0.7);
     font-family: Roboto;
     font-weight: 600;
-    font-size: 1.111vw;
+    font-size: 1.1vw;
     text-decoration: line-through;
     text-align: right;
     line-height: 100%;
@@ -68,10 +75,38 @@
 }
 
 .con-deals .img-deal {
-    width: 100%;
-    height: 61.246%;
+    height: 100%;
     background-color: black;
     border-radius: 0.694vw;
+}
+
+.con-deals .img-inscription {
+    width: 100%;
+    height: 61.246%;
+    display: flex;
+    position: relative;
+}
+
+.img-inscription .inscription {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+
+    background: linear-gradient(90deg, #7BC74D 0%, #A4C092 100%);
+
+    border-bottom-right-radius: 0.694vw;
+    border-bottom-left-radius: 0.694vw;
+    padding: 0.5vw;
+
+    color: rgb(255, 255, 255, 0.9);
+    text-align: center;
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 1.25vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+
 }
 
 .con-deals .name-deal {

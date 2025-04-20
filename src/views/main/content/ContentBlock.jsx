@@ -54,3 +54,35 @@ export function Con_bl() {
     </>;
 }
 /* Для 3-ех иконных */
+
+
+export function ConFree() {
+    return <>
+        <div className='con-free'>
+            <div className='con-free-inner'>
+                <div className='con-in-free'>
+                    <div><i className="bi bi-gift"></i>Free games!</div>
+                    <button>View More</button>
+                </div>
+                <div className='con-free-main'>
+                    <FreeCart />
+                    <FreeCart />
+                    <FreeCart />
+                </div>
+            </div>
+        </div>
+    </>;
+}
+
+export function FreeCart() {
+    return <>
+        <div>
+            <div className='img-free-inner'>
+                <div className='img-free'></div>
+                <div className='inscription-free'>FREE NOW</div>
+            </div>
+            <div className='name-free'>Name</div>
+            <div className='data-free'>Free Now - Data at Data</div>
+        </div>
+    </>;
+}
