@@ -25,7 +25,7 @@
     position: relative;
     justify-content: space-between;
 
-    padding: 3vw;
+    padding: 2.5vw;
 
     width: 57.639vw;
     height: 40.278vw;
@@ -47,13 +47,22 @@
     width: 100%;
 }
 
-.form-signUp input {
+.form-signUp .input-form {
     border: none;
     outline: none;
     height: 4.2vw;
     border-radius: 0.347vw;
     background: rgba(96, 105, 118, 0.4);
     padding: 1vw;
+    width: 25vw;
+}
+
+.form-inputs {
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5vw;
 }
 
 .description-signUp {
@@ -62,7 +71,7 @@
 
     align-items: center;
 
-    width: 38.819vw;
+    width: 40.819vw;
 
     font-family: Roboto;
     font-weight: 500;
@@ -70,10 +79,14 @@
     line-height: 100%;
     letter-spacing: 0%;
     vertical-align: middle;
+
+    flex-wrap: unset;
+    justify-content: unset;
 }
 
 .checkbox-input {
-    width: 1.806vw;
+    width: 1.5vw;
+    height: 1.5vw;
 }
 
 .description-signUp label {
@@ -101,12 +114,12 @@
     width: 65%;
 }
 
-.captcha {
+/* .captcha {
     width: 22.569vw;
     height: 5.833vw;
 
     background-color: white;
-}
+} */
 
 .signUp {
     width: 51.567vw;
@@ -121,6 +134,21 @@
     text-align: center;
     vertical-align: middle;
 }
+
+.form-errors {
+    display: flex;
+    gap: 0.3vw;
+}
+
+.form-input span {
+    color: #C74D4D;
+    font-size: 0.7vw;
+}
+
+.input-error {
+    border: 1px solid #C74D4D !important;
+}
+
 
 /* ////////////////////////////////////////////////////////// */
 

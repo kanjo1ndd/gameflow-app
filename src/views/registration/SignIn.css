@@ -16,6 +16,18 @@
     background-position: center;
 }
 
+.button-back {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0.5%;
+}
+
+.button-back i {
+    font-size: 2vw;
+    color: white;
+}
+
 .logIn {
     width: 73.167vw;
     display: flex;
@@ -69,7 +81,7 @@
     vertical-align: middle;
 }
 
-.form input {
+.form .input-form {
     border: none;
     outline: none;
     height: 4.2vw;
@@ -156,6 +168,21 @@
     text-decoration-thickness: 0%;
     text-decoration-skip-ink: auto;
 }
+
+.form-errors {
+    display: flex;
+    gap: 0.3vw;
+}
+
+.form-input span {
+    color: #C74D4D;
+    font-size: 0.7vw;
+}
+
+.input-error {
+    border: 1px solid #C74D4D !important;
+}
+
 
 /*****************************************************************/
 
