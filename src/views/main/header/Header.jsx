@@ -1,10 +1,6 @@
 import './Header.css'
-import { useNavigate } from 'react-router-dom'
 
 export default function Header() {
-
-    const navigate = useNavigate();
-
     return <>
         <div className='head'>
             <div className='logo'>
@@ -34,7 +30,7 @@ export default function Header() {
                 <i className="bi bi-suit-heart"></i>
                 <i className="bi bi-cart3"></i>
                 <i className="bi bi-globe2"></i>
-                <button className='sign_in' onClick={() => navigate('/SignIn')}>Sign in</button>
+                <button className='sign_in'>Sign in</button>
                 <button className='download'>Download</button>
             </div>
         </div>
