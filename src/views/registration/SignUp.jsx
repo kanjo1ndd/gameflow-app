@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import './SignUp.css'
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { AppContext } from '../../AppContext';
 import * as yup from "yup";
+
 
 const schema = yup.object().shape({
     login: yup.string().required("(Login is required)"),
@@ -23,6 +25,8 @@ export default function SignUp() {
 
     const [isSuccess, setIsSuccess] = useState(false);
     const navigate = useNavigate(); {/* Возращение назад */}
+    const [data, Register] = useState();
+
 
     const {
         register,
@@ -35,6 +39,11 @@ export default function SignUp() {
     const onSubmit = (data) => {
         console.log("Submitted data:", data);
         setIsSuccess(true);
+        fetch("http://localhost:5258/api/user", {
+            method: 'POST',
+            body: data
+        }).then(r => r.json())
+            
     };
 
     {/* Возращение назад */}
@@ -150,4 +159,7 @@ export default function SignUp() {
             )}
         </div>
     </>;
+    <script>
+
+    </script>
 }

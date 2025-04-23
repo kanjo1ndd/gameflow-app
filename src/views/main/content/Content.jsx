@@ -2,6 +2,7 @@ import './Content.css'
 import ContentBlock, { Conbl, ConFree } from './ContentBlock';
 import CategoryList from './ContentCategoryList';
 import ContentSale, { ConDeals } from './ContentSale';
+import { AppContext } from '../../../AppContext';
 
 export default function Content() {
     return <>
