@@ -1,0 +1,202 @@
+.container-registration {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    gap: 1vw;
+
+    background-image: url('/image-reg.jpg');
+
+    background-size: cover;
+    background-position: center;
+}
+
+.logIn {
+    width: 73.167vw;
+    display: flex;
+
+    color: white;
+    font-family: Roboto;
+    font-weight: 800;
+    font-size: 2.5vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+
+}
+
+.block-registration {
+    width: 79.167vw;
+    height: 30.834vw;
+    border-radius: 1.389vw;
+
+    background: linear-gradient(180deg, #2B2F35 0%, #25282D 100%);
+
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+
+    padding: 3vw;
+}
+
+.block-form {
+    width: 52.014vw;
+
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.form {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 1vw;
+    color: white;
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 1.111vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+
+.form input {
+    border: none;
+    outline: none;
+    height: 4.2vw;
+    border-radius: 0.347vw;
+    background: rgba(96, 105, 118, 0.4);
+    padding: 1vw;
+}
+
+.form-input {
+    flex-direction: column;
+    display: flex;
+    gap: 0.2vw;
+}
+
+.button-signin {
+    background: linear-gradient(90deg, #7BC74D 0%, #82CA77 100%);
+    color:rgba(34, 40, 49, 1);
+
+    border: none;
+    outline: none;
+    border-radius: 0.347vw;
+    font-family: Roboto;
+    font-weight: 800;
+    font-size: 1.25vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+
+    padding: 1.7vw;
+    width: 65%;
+}
+
+.button-cantlog {
+    font-family: Roboto;
+    font-weight: 800;
+    font-size: 1.25vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+
+    color: white;
+
+    border: none;
+    outline: none;
+    border-radius: 0.347vw;
+    background: rgba(57, 62, 70, 1);
+
+    width: 31%;
+}
+
+.form-buttons {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+
+.block-form .text {
+    color: white;
+
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 1.111vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.block-form .text-create-new {
+    color: white;
+    cursor: pointer;
+
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 1.111vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-thickness: 0%;
+    text-decoration-skip-ink: auto;
+}
+
+/*****************************************************************/
+
+.block-qrcode {
+    width: 25%;
+
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.qrcode-text {
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 1.111vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+
+    color:rgba(123, 199, 77, 1);
+}
+
+.qrcode-description {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 1.111vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+
+    color: white;
+}
+
+.qrcode-img {
+    width: 100%;
+    height: 70%;
+    border-radius: 1.389vw;
+
+    background-color: white;
+}

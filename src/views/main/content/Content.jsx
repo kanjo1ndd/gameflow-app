@@ -1,5 +1,6 @@
 import './Content.css'
 import ContentBlock, { Conbl, ConFree } from './ContentBlock';
+import CategoryList from './ContentCategoryList';
 import ContentSale, { ConDeals } from './ContentSale';
 
 export default function Content() {
@@ -29,6 +30,7 @@ export default function Content() {
                     <button>Install Mobile <i className="bi bi-box-arrow-up-right"></i></button>
                 </div>
             </div>
+            <CategoryList />
             <ContentBlock />
             <ContentBlock />
             <ContentBlock />
