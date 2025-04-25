@@ -147,9 +147,102 @@
 
 .input-error {
     border: 1px solid #C74D4D !important;
+    border-radius: 0.347vw !important;
 }
 
+/* Страны */
 
+.react-select__control {
+    border: none !important;
+    outline: none !important;
+    min-height: 4.2vw !important;
+    border-radius: 0.347vw !important;
+    background: rgba(96, 105, 118, 0.4) !important;
+    padding: 0 1vw !important;
+    width: 25vw !important;
+    font-size: 1vw !important;
+    color: black !important;
+    box-shadow: none !important;
+    transition: none !important;
+}
+  
+.react-select__control--is-focused {
+    box-shadow: none !important;
+    border: none !important;
+}
+  
+.react-select__value-container {
+    padding: 0 !important;
+    color: black !important;
+}
+  
+.react-select__input-container {
+    color: black !important;
+}
+  
+.react-select__single-value {
+    color: black !important;
+}
+  
+.react-select__indicator-separator {
+    display: none !important;
+}
+  
+.react-select__menu {
+    background-color: white !important;
+    color: black !important;
+    font-size: 1vw !important;
+    border-radius: 0.347vw !important;
+    z-index: 10 !important;
+    width: 100% !important;
+}
+  
+.react-select__option {
+    cursor: pointer !important;
+    padding: 0.6vw 1vw !important;
+    color: black !important;
+}
+  
+.react-select__option--is-focused {
+    background-color: rgba(96, 105, 118, 0.2) !important;
+}
+  
+.react-select__option--is-selected {
+    background-color: rgba(96, 105, 118, 0.4) !important;
+    color: black !important;
+}
+  
+.react-select__indicators {
+    color: black !important;
+}
+  
+.react-select__dropdown-indicator {
+    padding: 0.5vw !important;
+}
+
+.react-select__dropdown-indicator {
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 2vw !important;
+    height: 100% !important;
+}
+  
+.react-select__indicator svg {
+    width: 1.5vw !important;
+    height: 1.5vw !important;
+
+    color: black !important;
+}
+
+.react-select--error .react-select__control {
+    border: 1px solid #C74D4D !important;
+}
+
+.react-select--error .react-select__control--is-focused {
+    border: 1px solid #C74D4D !important;
+}
 /* ////////////////////////////////////////////////////////// */
 
 .form-created {
