@@ -5,7 +5,11 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { AppContext } from '../../AppContext';
 import * as yup from "yup";
+import Select from "react-select";
+import countryList from 'react-select-country-list';
+import { Controller } from 'react-hook-form';
 
+const countryOptions = countryList().getData();
 
 const schema = yup.object().shape({
     login: yup.string().required("(Login is required)"),
@@ -16,7 +20,10 @@ const schema = yup.object().shape({
         .required("(Please confirm your password)"),
     email: yup.string().email("(Invalid email)").required("(Email is required)"),
     phone: yup.string().required("(Phone number is required)").matches(/^[0-9]+$/, "(Only digits are allowed)"),
-    country: yup.string().required("(Country is required)"),
+    country: yup.object({
+        value: yup.string().required("(Country is required)"),
+        label: yup.string().required()
+    }).nullable().required("(Country is required)"),
     birthDate: yup.string().required("(Date of birth is required)"),
     agree: yup.boolean().oneOf([true], "(You must agree to the terms)")
 });
@@ -27,19 +34,16 @@ export default function SignUp() {
     const navigate = useNavigate(); {/* Возращение назад */}
     const {request} = useContext(AppContext);
 
-    // useEffect(() => {
-    //     request("api/user/" + data)
-    //     .then(data => Register(data))
-    //     .catch(j => console.error(j));
-    // });
-
-
     const {
         register,
         handleSubmit,
+        control,
         formState: { errors }
     } = useForm({
-        resolver: yupResolver(schema)
+        resolver: yupResolver(schema),
+        defaultValues: {
+            country: null
+        }
     });
 
     const onSubmit = (data) => {
@@ -73,7 +77,7 @@ export default function SignUp() {
                                         CREATE A LOGIN
                                         {errors.login && <span>{errors.login.message}</span>}
                                     </div>
-                                    <input  {...register("login")}
+                                    <input {...register("login")}
                                         className={`input-form ${errors.login ? 'input-error' : ''}`}/>
                                 </div>
 
@@ -91,7 +95,7 @@ export default function SignUp() {
                                         CREATE A PASSWORD
                                         {errors.password && <span>{errors.password.message}</span>}
                                     </div>
-                                    <input  type="password" {...register("password")}
+                                    <input type="password" {...register("password")}
                                         className={`input-form ${errors.password ? 'input-error' : ''}`}/>
                                 </div>
 
@@ -127,8 +131,20 @@ export default function SignUp() {
                                         PUT YOUR COUNTRY
                                         {errors.country && <span>{errors.country.message}</span>}
                                     </div>
-                                    <input {...register("country")} 
-                                        className={`input-form ${errors.country ? 'input-error' : ''}`} />
+                                    <Controller
+                                        control={control}
+                                        name="country"
+                                        render={({ field }) => (
+                                            <Select
+                                                {...field}
+                                                options={countryOptions}
+                                                classNamePrefix="react-select"
+                                                className={`${errors.country ? 'react-select--error' : ''}`}
+                                                placeholder="Select a country..."
+                                                isClearable
+                                            />
+                                        )}
+                                    />
                                 </div>
 
                                 <div className='form-input'>
@@ -136,7 +152,7 @@ export default function SignUp() {
                                         PUT YOUR DATE OF BIRTH
                                         {errors.birthDate && <span>{errors.birthDate.message}</span>}
                                     </div>
-                                    <input {...register("birthDate")} 
+                                    <input type="date" {...register("birthDate") } 
                                         className={`input-form ${errors.birthDate? 'input-error' : ''}`}/>
                                 </div>
                             </div>
@@ -165,7 +181,4 @@ export default function SignUp() {
             )}
         </div>
     </>;
-    <script>
-
-    </script>
     }
