@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom'
+import { useContext, useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom'
 import './SignUp.css'
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -25,7 +25,13 @@ export default function SignUp() {
 
     const [isSuccess, setIsSuccess] = useState(false);
     const navigate = useNavigate(); {/* Возращение назад */}
-    const [data, Register] = useState();
+    const {request} = useContext(AppContext);
+
+    // useEffect(() => {
+    //     request("api/user/" + data)
+    //     .then(data => Register(data))
+    //     .catch(j => console.error(j));
+    // });
 
 
     const {
@@ -37,14 +43,14 @@ export default function SignUp() {
     });
 
     const onSubmit = (data) => {
+        data.preventDefault();
         console.log("Submitted data:", data);
         setIsSuccess(true);
-        fetch("http://localhost:5258/api/user", {
+        request('/api/user/', {
             method: 'POST',
-            body: data
-        }).then(r => r.json())
-            
-    };
+            body: new FormData(data.target)
+        }).then(console.log).catch(console.error);}
+
 
     {/* Возращение назад */}
     const handleBack = () => {
@@ -60,14 +66,14 @@ export default function SignUp() {
                 <>
                     <div className='signUp'>Create an account</div>
                     <div className='block-signUp'>
-                        <form className='form-signUp' onSubmit={handleSubmit(onSubmit)}>
+                        <form className='form-signUp' onSubmit={onSubmit}>
                             <div className='form-inputs'>
                                 <div className='form-input'>
                                     <div className='form-errors'>
                                         CREATE A LOGIN
                                         {errors.login && <span>{errors.login.message}</span>}
                                     </div>
-                                    <input {...register("login")}
+                                    <input  {...register("login")}
                                         className={`input-form ${errors.login ? 'input-error' : ''}`}/>
                                 </div>
 
@@ -85,7 +91,7 @@ export default function SignUp() {
                                         CREATE A PASSWORD
                                         {errors.password && <span>{errors.password.message}</span>}
                                     </div>
-                                    <input type="password" {...register("password")}
+                                    <input  type="password" {...register("password")}
                                         className={`input-form ${errors.password ? 'input-error' : ''}`}/>
                                 </div>
 
@@ -162,4 +168,4 @@ export default function SignUp() {
     <script>
 
     </script>
-}
+    }
