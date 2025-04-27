@@ -13,7 +13,7 @@ export default function Header() {
             <div className='path'>
                 <nav>
                     <ul className='nav'>
-                        <li className='li'>
+                        <li className='li' onClick={() => navigate('/')}>
                             Discover
                         </li>
                         <li className='li'>
@@ -30,7 +30,7 @@ export default function Header() {
                 </div>
             </div>
             <div className='reg'>
-                <i className="bi bi-person-circle"></i>
+                <i className="bi bi-person-circle" onClick={() => navigate('/Profile')}></i>
                 <i className="bi bi-suit-heart"></i>
                 <i className="bi bi-cart3"></i>
                 <i className="bi bi-globe2"></i>

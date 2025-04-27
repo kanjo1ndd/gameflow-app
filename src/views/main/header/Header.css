@@ -30,6 +30,7 @@
 
 .li {
     /* text */
+    cursor: pointer;
     font-family: Roboto;
     font-weight: 400;
     font-size: 1.111vw;
@@ -163,4 +164,8 @@
     letter-spacing: 0%;
     text-align: center;
     
+}
+
+.bi-person-circle {
+    cursor: pointer;
 }

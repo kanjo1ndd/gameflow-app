@@ -1,0 +1,121 @@
+.content-profile {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-wrap: wrap;
+    gap: 2.5vw;
+}
+
+.content-profile > div:first-child {
+    margin-top: 2.5vw;
+}
+
+.content-profile > div:last-child {
+    margin-bottom: 2.5vw;
+}
+
+.block-profile {
+    width: 79.167vw;
+    height: 12.292vw;
+    gap: 1vw;
+
+    display: flex;
+    position: relative;
+}
+
+.profile-img {
+    background-color: black;
+    border-radius: 0.486vw;
+    height: 100%;
+    width: 12.292vw;
+}
+
+.nickname-level {
+    height: 100%;
+    width: 20vw;
+
+    display: flex;
+    position: relative;
+
+    flex-direction: column;
+    justify-content: center;
+}
+
+.level {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 1.667vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: bottom;
+
+    color: rgba(238, 238, 238, 1);
+}
+
+.nickname {
+    color: rgba(238, 238, 238, 1);
+
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 3.333vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: bottom;
+}
+
+.about-me {
+    height: 100%;
+    width: 25vw;
+    gap: 0.5vw;
+
+    display: flex;
+    position: relative;
+
+    flex-direction: column;
+}
+
+.text-about-me {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 1.2vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: bottom;
+
+    color: rgba(238, 238, 238, 1);
+}
+
+.text-description {
+    font-family: Roboto;
+    font-size: 1.1vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: bottom;
+
+    color: rgba(238, 238, 238, 0.9);
+}
+
+.button-edit {
+    height: 5.5vw;
+    display: flex;
+    position: relative;
+}
+
+.button-edit-profile {
+    border-radius: 0.285vw;
+    padding: 2vw;
+
+    background: rgb(47, 51, 58);
+    border: none;
+    color: white;
+
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 1.667vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+}
