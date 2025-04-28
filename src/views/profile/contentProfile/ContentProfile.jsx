@@ -29,6 +29,17 @@ export default function ContentProfile() {
                 </div>
                 <div className='show-achievements'>Show more <i className="bi bi-arrow-right"></i></div>
             </div>
+            <div className='game-collection'>
+                <div className='category-collection'>Game collection</div>
+                <div className='blocks-collection'>
+                    <CollectionCart />
+                    <CollectionCart />
+                    <CollectionCart />
+                    <CollectionCart />
+                    <CollectionCart />
+                    <CollectionCart />
+                </div>
+            </div>
         </div>
     </>;
 }
@@ -39,6 +50,32 @@ export function AchievementsCart() {
             <div className='achievements-img'></div>
             <div className='achievements-name'>Name achievement</div>
             <div className='achievements-progress'>Completed by ???%</div>
+        </div>
+    </>;
+}
+
+export function CollectionCart() {
+    return <>
+        <div className='block-collection'>
+            <div className='collection-img'/>
+            <div className='collection-content'>
+                <div className='collection-name'>Name game</div>
+                <div className='collection-mini-img-text'>
+                    <div className='collection-mini-img'>
+                        <div className='mini-img'/>
+                        <div className='mini-img'/>
+                        <div className='mini-img'/>
+                    </div>
+                    <div className='collection-text'>
+                        <div className='text-record'>? hours played on record</div>
+                        <div className='text-played'>Last played: ? days ago</div>
+                    </div>
+                </div>
+                <div>
+                    <div className='text-completed'>Completed: ?%</div>
+                    <div className='bar-completed'></div>
+                </div>
+            </div>
         </div>
     </>;
 }
