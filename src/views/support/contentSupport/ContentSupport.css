@@ -1,0 +1,182 @@
+.support-block {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    gap: 2.5vw;
+}
+
+.support-block > div:first-child {
+    margin-top: 2.5vw;
+}
+
+.support-block > div:last-child {
+    margin-bottom: 2.5vw;
+}
+
+.text-support {
+    width: 79.167vw;
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 3.333vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: bottom;
+    color: white;
+}
+
+/* Поиск */
+
+.search-block {
+    display: flex;
+    position: relative;
+    width: 79.167vw;
+}
+
+input {
+    width: 47.014vw;
+    height: 2.709vw;
+    border-radius: 1.389vw;
+    padding-top: 0.694vw;
+    padding-right: 0.833vw;
+    padding-bottom: 0.694vw;
+    padding-left: 2.833vw;
+    gap: 0.694vw;
+    
+    background: rgba(96, 105, 118, 0.6);
+
+    border: 0.069vw solid rgba(255, 255, 255, 0.8);
+    color: rgba(238, 238, 238, 0.75);
+
+    
+    /* text */
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 1.111vw;
+}
+
+input:focus {
+    outline: none;
+}
+
+.support-block i {
+    position: absolute;
+    color: rgba(238, 238, 238, 0.75);
+    pointer-events: none;
+
+    font-size: 0.781vw;
+    width: 0.781vw;
+    height: 17.857%;
+    top: 26.584%;
+    left: 1.5%;
+}
+
+/* Поиск */
+
+/* Секции */
+
+.blocks-sections {
+    width: 79.167vw;
+    height: 54.083vw;
+    display: flex;
+    position: relative;
+
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.support-section {
+    width: 100%;
+    height: 6.111vw;
+    border-radius: 0.486vw;
+
+    background-color:rgba(57, 62, 70, 1);
+    color: white;
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 1.389vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    transition: all 0.3s ease;
+
+    padding: 0 1.5vw 0 1.5vw;
+}
+
+.support-section.open {
+    height: 12vw;
+
+    padding: 0 1.5vw 1.5vw 1.5vw;
+}
+
+.section-header {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 6.111vw;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section-description {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 1.389vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+
+    color: rgba(238, 238, 238, 0.7);
+}
+
+.chevron {
+    display: flex;
+    position: relative;
+
+    width: 2vw;
+}
+
+.chevron i {
+    display: flex;
+    position: relative;
+    font-size: 2vw;
+}
+
+/* Секции */
+
+.text-question {
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 2.778vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: white;
+}
+
+.button-contact {
+    background: rgba(123, 199, 77, 1);
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 1.736vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+
+    color: rgba(34, 40, 49, 1);
+
+    border: none;
+    outline: none;
+
+    border-radius: 0.486vw;
+    padding: 2vw 4vw 2vw 4vw;
+}

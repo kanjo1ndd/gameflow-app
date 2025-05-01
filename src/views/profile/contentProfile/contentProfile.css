@@ -1,0 +1,325 @@
+.content-profile {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-wrap: wrap;
+    gap: 2.5vw;
+}
+
+.content-profile > div:first-child {
+    margin-top: 2.5vw;
+}
+
+.content-profile > div:last-child {
+    margin-bottom: 2.5vw;
+}
+
+.block-profile {
+    width: 79.167vw;
+    height: 12.292vw;
+    gap: 1vw;
+
+    display: flex;
+    position: relative;
+}
+
+.profile-img {
+    background-color: black;
+    border-radius: 0.486vw;
+    height: 100%;
+    width: 12.292vw;
+}
+
+.nickname-level {
+    height: 100%;
+    width: 20vw;
+
+    display: flex;
+    position: relative;
+
+    flex-direction: column;
+    justify-content: center;
+}
+
+.level {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 1.667vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: bottom;
+
+    color: rgba(238, 238, 238, 1);
+}
+
+.nickname {
+    color: rgba(238, 238, 238, 1);
+
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 3.333vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: bottom;
+}
+
+.about-me {
+    height: 100%;
+    width: 31vw;
+    gap: 0.5vw;
+
+    display: flex;
+    position: relative;
+
+    flex-direction: column;
+}
+
+.text-about-me {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 1.2vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: bottom;
+
+    color: rgba(238, 238, 238, 1);
+}
+
+.text-description {
+    font-family: Roboto;
+    font-size: 1.1vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: bottom;
+
+    color: rgba(238, 238, 238, 0.9);
+}
+
+.button-edit {
+    height: 3vw;
+    display: flex;
+    position: relative;
+}
+
+.button-edit-profile {
+    border-radius: 0.285vw;
+    padding: 0 2vw;
+
+    background: rgb(47, 51, 58);
+    border: none;
+    color: white;
+
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 1.227vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+/* /////////////////////////////////////////////////// */
+
+.achievements-carts {
+    width: 79.167vw;
+    height: 23.264vw;
+
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.category-achievements {
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 2.222vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: white;
+}
+
+.show-achievements {
+    width: 9%;
+    cursor: pointer;
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 1.111vw;
+    letter-spacing: 0%;
+
+    color: rgba(123, 199, 77, 1);
+}
+
+.block-achievements-for-carts {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    width: 100%;
+    height: 16.528vw;
+}
+
+.block-achievements-cart {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 12.292vw;
+    height: 100%;
+}
+
+.achievements-img {
+    width: 100%;
+    height: 12.292vw;
+    background-color: black;
+    border-radius: 0.694vw;
+}
+
+.achievements-name {
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 1.111vw;
+    letter-spacing: 0%;
+    color: white;
+}
+
+.achievements-progress {
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 0.972vw;
+    letter-spacing: 0%;
+
+    color: rgba(255, 255, 255, 0.7);
+
+}
+
+/* ////////////////////////////////////////////////////////////////////////////// */
+
+.game-collection {
+    width: 79.167vw;
+    gap: 2.5vw;
+
+    display: flex;
+    position: relative;
+
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.category-collection {
+    color: white;
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 2.222vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.blocks-collection {
+    width: 100%;
+    gap: 1.05vw;
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.block-collection {
+    width: 39.028vw;
+    height: 25.556vw;
+    border-radius: 0.486vw;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: rgba(57, 62, 70, 1);
+    padding: 1vw;
+}
+
+.collection-img {
+    background-color: black;
+    width: 100%;
+    height: 13.611vw;
+    border-radius: 0.285vw;
+}
+
+.collection-content {
+    display: flex;
+    position: relative;
+
+    justify-content: space-between;
+    flex-direction: column;
+
+    width: 100%;
+    height: 8.819vw;
+}
+
+.collection-name {
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 1.667vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: white;
+}
+
+.collection-mini-img-text {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+
+.collection-mini-img {
+    display: flex;
+    position: relative;
+    width: 8.681vw;
+    justify-content: space-between;
+}
+
+.mini-img {
+    background-color: black;
+    width: 2.708vw;
+    height: 2.708vw;
+    border-radius: 0.208vw;
+}
+
+.collection-text {
+    text-align: right;
+}
+
+.text-record {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 0.972vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color:rgba(255, 255, 255, 0.7);
+}
+
+.text-played {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 0.972vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: right;   
+    color:rgba(255, 255, 255, 0.7); 
+}
+
+.text-completed {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 0.972vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color:rgba(255, 255, 255, 0.7); 
+}
+
+.bar-completed {
+    background: linear-gradient(90deg, #606976 70%, #222831 70%, #222831 100%);
+    width: 13.889vw;
+    height: 1.181vw;
+    border-radius: 0.625vw;
+    border: 0.15vw solid #222831;
+}
