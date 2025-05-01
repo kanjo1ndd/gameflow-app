@@ -159,7 +159,7 @@ export default function SignUp() {
                             </div>
                             {/* Капча */}
                             {/* <div className='captcha'></div> */}
-                            <button className='button-signup'>SIGN UP</button>
+                            <button className='btn button-signup'>SIGN UP</button>
                         </form>
                     </div>
                 </>
@@ -169,7 +169,7 @@ export default function SignUp() {
                         <div className='created'>Account created!</div>
                         <div className='send-email'>An email has been sent to you.</div>
                     </div>
-                    <button className='button-created' onClick={() => navigate('/SignIn')}>LOG IN</button>
+                    <button className='btn button-created' onClick={() => navigate('/SignIn')}>LOG IN</button>
                 </div>
             )}
         </div>

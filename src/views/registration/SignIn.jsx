@@ -57,8 +57,8 @@ export default function SignIn() {
                         </div>
                     </form>
                     <div className='form-buttons'>
-                        <button className='button-signin'>SIGN IN</button>
-                        <button className='button-cantlog'>Help, i cant log in</button>
+                        <button className='btn button-signin'>SIGN IN</button>
+                        <button className='btn button-cantlog'>Help, i cant log in</button>
                     </div>
                     <div className='text'>no account?</div>
                     <div className='text-create-new' onClick={() => navigate('/SignUp')}>Create a new one!</div>

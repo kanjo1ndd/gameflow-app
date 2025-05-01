@@ -45,7 +45,7 @@ export default function ContentSupport() {
                 Have any other questions?
             </div>
             <div>
-                <button className='button-contact'>Contact us on our email!</button>
+                <button className='btn button-contact'>Contact us on our email!</button>
             </div>
         </div>
     </>;

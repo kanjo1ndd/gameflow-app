@@ -1,0 +1,59 @@
+.block-wishlist {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    gap: 2.5vw;
+}
+
+.block-wishlist > div:first-child {
+    margin-top: 2.5vw;
+}
+
+.block-wishlist > div:last-child {
+    margin-bottom: 2.5vw;
+}
+
+.name-sum {
+    width: 79.167vw;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-wishlist {
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 3.333vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: bottom;
+    color: white;
+}
+
+.sum-price {
+    display: flex;
+    position: relative;
+    align-items: center;
+
+    height: 2.2vw;
+
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 1.111vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: right;
+    vertical-align: middle;
+    color: white;
+    padding: 0.5vw;
+
+    border: 0.069vw solid white;
+
+    border-radius: 1.389vw;
+}

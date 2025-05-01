@@ -14,7 +14,7 @@ export default function ContentProfile() {
                     <div className='text-description'>Description</div>
                 </div>
                 <div className='button-edit'>
-                    <button className="button-edit-profile">EDIT PROFILE</button>
+                    <button className="btn button-edit-profile">EDIT PROFILE</button>
                 </div>
             </div>
             <div className='achievements-carts'>

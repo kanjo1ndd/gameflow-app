@@ -97,7 +97,10 @@
 
 .button-signup {
     background: linear-gradient(90deg, #7BC74D 0%, #82CA77 100%);
-    color:rgba(34, 40, 49, 1);
+    background-size: 200% 100%;
+    transition: background-position 0.5s, transform 0.1s, filter 0.1s;
+
+    color:rgba(34, 40, 49, 1) !important;
 
     border: none;
     outline: none;
@@ -295,7 +298,10 @@
 
 .button-created {
     background: linear-gradient(90deg, #7BC74D 0%, #82CA77 100%);
-    color:rgba(34, 40, 49, 1);
+    background-size: 200% 100%;
+    transition: background-position 0.5s, transform 0.1s, filter 0.1s;
+
+    color:rgba(34, 40, 49, 1) !important;
 
     border: none;
     outline: none;

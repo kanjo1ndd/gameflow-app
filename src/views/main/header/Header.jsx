@@ -35,11 +35,12 @@ export default function Header() {
             <div className='reg'>
                 <i className={`bi bi-person-circle ${location.pathname === '/Profile' ? 'active' : ''}`}
                     onClick={() => navigate('/Profile')}/>
-                <i className="bi bi-suit-heart"/>
+                <i className={`bi bi-suit-heart ${location.pathname === '/WishList' ? 'active' : ''}`}
+                    onClick={() => navigate('/WishList')}/>
                 <i className="bi bi-cart3"/>
                 <i className="bi bi-globe2"/>
-                <button className='sign_in' onClick={() => navigate('/SignIn')}>Sign in</button>
-                <button className='download'>Download</button>
+                <button className='btn sign_in' onClick={() => navigate('/SignIn')}>Sign in</button>
+                <button className='btn download'>Download</button>
             </div>
         </div>
     </>;
