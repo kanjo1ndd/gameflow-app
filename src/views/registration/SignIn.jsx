@@ -2,26 +2,46 @@ import './SignIn.css'
 import { useNavigate } from 'react-router-dom'
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useContext, useState, useRef } from 'react';
+import { AppContext } from '../../AppContext';
 import * as yup from "yup";
 
-const schema = yup.object().shape({
-    login: yup.string().required("(Login is required)"),
-    password: yup.string().min(6, "(Password must be at least 6 characters)").required("(Password is required)"),
-});
+// const schema = yup.object().shape({
+//     login: yup.string().required("(Login is required)"),
+//     password: yup.string().min(6, "(Password must be at least 6 characters)").required("(Password is required)"),
+// });
 
 export default function SignIn() {
 
-    const {
-        register,
-        handleSubmit,
-        formState: { errors }
-    } = useForm({
-        resolver: yupResolver(schema)
-    });
+    const [login, setLogin] = useState("");
+    const [password, setPassword] = useState("");
+    const {request, token, setToken} = useContext(AppContext);
+
+    // const {
+    //     register,
+    //     handleSubmit,
+    //     formState: { errors }
+    // } = useForm({
+    //     resolver: yupResolver(schema)
+    // });
     
-    const onSubmit = (data) => {
-        console.log("Submitted data:", data);
-        setIsSuccess(true);
+    const onSubmit = () => {
+        //data.preventDefault();
+        //console.log("Submitted data:", data);
+        //setIsSuccess(true);
+        //const login = schema.login;
+        //const password = schema.password;
+        console.log(login, password);
+        let credentials = btoa(`${login}:${password}`);
+        request('/api/user', {
+            method: 'GET',
+            headers: {
+                'Authorization': 'Basic ' + credentials
+            }
+        }).then(data => {
+            let jti = data;
+            setToken(jti);
+        }).catch(console.error);
     };
 
     const navigate = useNavigate();
@@ -38,26 +58,26 @@ export default function SignIn() {
             <div className='logIn'>Log in</div>
             <div className='block-registration'>
                 <div className='block-form'>
-                    <form className='form' onSubmit={handleSubmit(onSubmit)}>
+                    {/* <form className='form' /*onSubmit={onSubmit}*/}
                         <div className='form-input'>
                             <div className='form-errors'>
                                 SIGN IN WITH ACCOUNT NAME
-                                {errors.login && <span>{errors.login.message}</span>}
+                                {/* {errors.login && <span>{errors.login.message}</span>} */}
                             </div>
-                            <input {...register("login")}
-                            className={`input-form ${errors.login ? 'input-error' : ''}`}/>
+                            <input value={login} onChange={e => setLogin(e.target.value)} /*{...register("login")}*/
+                            /*className={`input-form ${errors.login ? 'input-error' : ''}`}*//>
                         </div>
                         <div className='form-input'>
                             <div className='form-errors'>
                                 PASSWORD
-                                {errors.password && <span>{errors.password.message}</span>}
+                                {/* {errors.password && <span>{errors.password.message}</span>} */}
                             </div>
-                            <input type="password" {...register("password")}
-                            className={`input-form ${errors.password ? 'input-error' : ''}`}/>
+                            <input value={password} onChange={e => setPassword(e.target.value)} type="password" /*{...register("password")}*/
+                            /*className={`input-form ${errors.password ? 'input-error' : ''}`}*//>
                         </div>
-                    </form>
+                        <button onClick={onSubmit} className='button-signin'>SIGN IN</button>
+                    {/* </form> */}
                     <div className='form-buttons'>
-                        <button className='button-signin'>SIGN IN</button>
                         <button className='button-cantlog'>Help, i cant log in</button>
                     </div>
                     <div className='text'>no account?</div>

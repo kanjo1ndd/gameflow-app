@@ -1,6 +1,11 @@
 import './Footer.css'
 
 export default function Footer() {
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
     return <>
         <div className='block'>
             <div className='footer'>
@@ -9,7 +14,7 @@ export default function Footer() {
                     <i className="bi bi-twitter"></i>
                     <i className="bi bi-youtube"></i>
                 </div>
-                <div className='up'>
+                <div className='up' onClick={scrollToTop}>
                     <i className="bi bi-chevron-up"></i>
                 </div>
                 <div className='text'>

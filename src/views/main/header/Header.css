@@ -30,12 +30,17 @@
 
 .li {
     /* text */
+    cursor: pointer;
     font-family: Roboto;
     font-weight: 400;
     font-size: 1.111vw;
     line-height: 100%;
     letter-spacing: 0%;
     color: white;
+}
+
+.li.active {
+    color: rgba(123, 199, 77, 1);
 }
 
 /* Поиск */
@@ -133,7 +138,7 @@
     border-radius: 0.285vw;
     padding: 0.1vw;
 
-    background: var(--Color-2, rgba(57, 62, 70, 1));
+    background: rgba(57, 62, 70, 1);
     border: none;
     color: white;
 
@@ -143,6 +148,14 @@
     line-height: 100%;
     letter-spacing: 0%;
     text-align: center;
+
+    background: linear-gradient(30deg, rgb(64, 72, 80), rgba(57, 62, 70, 1));
+    background-size: 200% 100%;
+    transition: background-position 0.5s;
+}
+
+.sign_in:hover {
+    background-position: 100% 0;
 }
 
 .download {
@@ -163,4 +176,12 @@
     letter-spacing: 0%;
     text-align: center;
     
+}
+
+.reg i {
+    cursor: pointer;
+}
+
+.reg i.active {
+    color: rgba(123, 199, 77, 1);
 }

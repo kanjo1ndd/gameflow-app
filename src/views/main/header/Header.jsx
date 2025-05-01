@@ -1,9 +1,10 @@
 import './Header.css'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 
 export default function Header() {
 
     const navigate = useNavigate();
+    const location = useLocation();
 
     return <>
         <div className='head'>
@@ -13,10 +14,12 @@ export default function Header() {
             <div className='path'>
                 <nav>
                     <ul className='nav'>
-                        <li className='li'>
+                        <li className={`li ${location.pathname === '/' ? 'active' : ''}`} 
+                            onClick={() => navigate('/')}>
                             Discover
                         </li>
-                        <li className='li'>
+                        <li className={`li ${location.pathname === '/Support' ? 'active' : ''}`} 
+                            onClick={() => navigate('/Support')}>
                             Support
                         </li>
                         <li className='li'>
@@ -30,10 +33,11 @@ export default function Header() {
                 </div>
             </div>
             <div className='reg'>
-                <i className="bi bi-person-circle"></i>
-                <i className="bi bi-suit-heart"></i>
-                <i className="bi bi-cart3"></i>
-                <i className="bi bi-globe2"></i>
+                <i className={`bi bi-person-circle ${location.pathname === '/Profile' ? 'active' : ''}`}
+                    onClick={() => navigate('/Profile')}/>
+                <i className="bi bi-suit-heart"/>
+                <i className="bi bi-cart3"/>
+                <i className="bi bi-globe2"/>
                 <button className='sign_in' onClick={() => navigate('/SignIn')}>Sign in</button>
                 <button className='download'>Download</button>
             </div>
