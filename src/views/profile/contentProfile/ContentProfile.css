@@ -326,3 +326,12 @@
     border-radius: 0.625vw;
     border: 0.15vw solid #222831;
 }
+
+/* ///////////////////////// */
+.need-authorization {
+    width: 79.167vw;
+    height: 100vh;
+    color: white;
+    font-size: 3.333vw;
+    font-family: Roboto;
+}

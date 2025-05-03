@@ -1,52 +1,63 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom'
+import { useContext, useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom'
 import './SignUp.css'
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
+import { AppContext } from '../../AppContext';
 import Select from 'react-select';
 import countryList from 'react-select-country-list';
-import { Controller } from 'react-hook-form';
 
 const countryOptions = countryList().getData();
-
-const schema = yup.object().shape({
-    login: yup.string().required("(Login is required)"),
-    name: yup.string().required("(Name is required)"),
-    password: yup.string().min(6, "(Password must be at least 6 characters)").required("(Password is required)"),
-    confirmPassword: yup.string()
-        .oneOf([yup.ref('password')], "(Passwords must match)")
-        .required("(Please confirm your password)"),
-    email: yup.string().email("(Invalid email)").required("(Email is required)"),
-    phone: yup.string().required("(Phone number is required)").matches(/^[0-9]+$/, "(Only digits are allowed)"),
-    country: yup.object({
-        value: yup.string().required("(Country is required)"),
-        label: yup.string().required()
-    }).nullable().required("(Country is required)"),
-    birthDate: yup.string().required("(Date of birth is required)"),
-    agree: yup.boolean().oneOf([true], "(You must agree to the terms)")
-});
 
 export default function SignUp() {
 
     const [isSuccess, setIsSuccess] = useState(false);
     const navigate = useNavigate(); {/* Возращение назад */}
+    const {request} = useContext(AppContext);
 
-    const {
-        register,
-        handleSubmit,
-        control,
-        formState: { errors },
-    } = useForm({
-        resolver: yupResolver(schema),
-        defaultValues: {
-            country: null
-        }
-    });
+    const [errors, setErrors] = useState({});
+    const [login, setLogin] = useState('');
+    const [name, setName] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
+    const [birthDate, setBirthDate] = useState('');
+    const [country, setCountry] = useState(null);
+    const [agree, setAgree] = useState(false);
 
-    const onSubmit = (data) => {
-        console.log("Submitted data:", data);
+    const onSubmit = (e) => {
+        e.preventDefault();
+
+        const newErrors = validate();
+        setErrors(newErrors);
+
+        if (Object.keys(newErrors).length > 0) return;
+
+        console.log("Submitted data:", e);
         setIsSuccess(true);
+        request('/api/user/', {
+            method: 'POST',
+            body: new FormData(e.target)
+        }).then(console.log).catch(console.error);
+    }
+
+    const validate = () => {
+        const newErrors = {};
+        if (!login.trim()) newErrors.login = "(Login is required)";
+        if (!name.trim()) newErrors.name = "(Name is required)";
+        if (!password.trim() || password.length < 6) 
+            newErrors.password = "(Password must be at least 6 characters)";
+        if (password !== confirmPassword)
+            newErrors.confirmPassword = "(Passwords must match)";
+        if (!confirmPassword.trim()) newErrors.confirmPassword = "(Password is required)";
+        if (!email.trim() || !/\S+@\S+\.\S+/.test(email))
+            newErrors.email = "(Invalid email)";
+        if (!phone.trim() || !/^\d+$/.test(phone))
+            newErrors.phone = "(Only digits are allowed)";
+        if (!phone.trim()) newErrors.phone = ("(Phone is required)");
+        if (!country) newErrors.country = "(Country is required)";
+        if (!birthDate.trim()) newErrors.birthDate = "(Date of birth is required)";
+        if (!agree) newErrors.agree = "(You must agree to the terms)";
+        return newErrors;
     };
 
     {/* Возращение назад */}
@@ -63,96 +74,95 @@ export default function SignUp() {
                 <>
                     <div className='signUp'>Create an account</div>
                     <div className='block-signUp'>
-                        <form className='form-signUp' onSubmit={handleSubmit(onSubmit)}>
+                        <form className='form-signUp' onSubmit={(onSubmit)}>
                             <div className='form-inputs'>
+
                                 <div className='form-input'>
                                     <div className='form-errors'>
                                         CREATE A LOGIN
-                                        {errors.login && <span>{errors.login.message}</span>}
+                                        {errors.login && <span>{errors.login}</span>}
                                     </div>
-                                    <input {...register("login")}
-                                        className={`input-form ${errors.login ? 'input-error' : ''}`}/>
+                                    <input name="login" value={login} onChange={(e) => setLogin(e.target.value)}
+                                    className={`input-form ${errors.login ? 'input-error' : ''}`}/>
                                 </div>
 
                                 <div className='form-input'>
                                     <div className='form-errors'>
                                         CREATE A NAME
-                                        {errors.name && <span>{errors.name.message}</span>}
+                                        {errors.name && <span>{errors.name}</span>}
                                     </div>
-                                    <input {...register("name")}
-                                        className={`input-form ${errors.name ? 'input-error' : ''}`}/>   
+                                    <input name="name" onChange={(e) => setName(e.target.value)}
+                                    className={`input-form ${errors.name ? 'input-error' : ''}`} />   
                                 </div>
 
                                 <div className='form-input'>
                                     <div className='form-errors'>
                                         CREATE A PASSWORD
-                                        {errors.password && <span>{errors.password.message}</span>}
+                                        {errors.password && <span>{errors.password}</span>}
                                     </div>
-                                    <input type="password" {...register("password")}
+                                    <input name='password' type="password" value={password} onChange={(e) => setPassword(e.target.value)} 
                                         className={`input-form ${errors.password ? 'input-error' : ''}`}/>
                                 </div>
 
                                 <div className='form-input'>
                                     <div className='form-errors'>
                                         REPEAT A PASSWORD
-                                        {errors.confirmPassword && <span>{errors.confirmPassword.message}</span>}
+                                        {errors.confirmPassword && <span>{errors.confirmPassword}</span>}
                                     </div>
-                                    <input type="password" {...register("confirmPassword")} 
-                                        className={`input-form ${errors.confirmPassword ? 'input-error' : ''}`}/>
+                                    <input name="confirmPassword" type="password" onChange={(e) => setConfirmPassword(e.target.value)}
+                                    className={`input-form ${errors.confirmPassword ? 'input-error' : ''}`}/>
                                 </div>
 
                                 <div className='form-input'>
                                     <div className='form-errors'>
                                         PUT YOUR EMAIL
-                                        {errors.email && <span>{errors.email.message}</span>}
+                                        {errors.email && <span>{errors.email}</span>}
                                     </div>
-                                    <input {...register("email")}
-                                        className={`input-form ${errors.email ? 'input-error' : ''}`} />
+                                    <input name="email" value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    className={`input-form ${errors.email ? 'input-error' : ''}`}/>
                                 </div>
 
                                 <div className='form-input'>
                                     <div className='form-errors'>
                                         PUT YOUR PHONE NUMBER
-                                        {errors.phone && <span>{errors.phone.message}</span>}
+                                        {errors.phone && <span>{errors.phone}</span>}
                                     </div>
-                                    <input {...register("phone")} 
-                                        className={`input-form ${errors.phone ? 'input-error' : ''}`} />
+                                    <input name="phone" onChange={(e) => setPhone(e.target.value)}
+                                    className={`input-form ${errors.phone ? 'input-error' : ''}`}/>
                                 </div>
 
                                 <div className='form-input'>
                                     <div className='form-errors'>
                                         PUT YOUR COUNTRY
-                                        {errors.country && <span>{errors.country.message}</span>}
+                                        {errors.country && <span>{errors.country}</span>}
                                     </div>
-                                    <Controller
-                                        control={control}
-                                        name="country"
-                                        render={({ field }) => (
-                                            <Select
-                                                {...field}
-                                                options={countryOptions}
-                                                classNamePrefix="react-select"
-                                                className={`${errors.country ? 'react-select--error' : ''}`}
-                                                placeholder="Select a country..."
-                                                isClearable
-                                            />
-                                        )}
+                                    <Select
+                                        value={country}
+                                        onChange={setCountry}
+                                        options={countryOptions}
+                                        classNamePrefix="react-select"
+                                        className={`${errors.country ? 'react-select--error' : ''}`}
+                                        placeholder="Select a country..."
+                                        isClearable
                                     />
+                                    <input type="hidden" name="country" value={country?.label || ''} />
                                 </div>
 
                                 <div className='form-input'>
                                     <div className='form-errors'>
                                         PUT YOUR DATE OF BIRTH
-                                        {errors.birthDate && <span>{errors.birthDate.message}</span>}
+                                        {errors.birthDate && <span>{errors.birthDate}</span>}
                                     </div>
-                                    <input type="date" {...register("birthDate") } 
-                                        className={`input-form ${errors.birthDate? 'input-error' : ''}`}/>
+                                    <input name="birthDate" type="date" value={birthDate}
+                                    onChange={(e) => setBirthDate(e.target.value)}
+                                    className={`input-form ${errors.birthDate ? 'input-error' : ''}`}/>
                                 </div>
                             </div>
                             {/* Согласие на права */}
                             <div className='description-signUp'>
                                 <label>
-                                    <input type="checkbox" {...register("agree")} className="checkbox-input" />
+                                    <input type="checkbox" checked={agree} onChange={() => setAgree(!agree)} className="checkbox-input" />
                                 </label>
                                  I am 13 years of age or older and agree to the terms of the
                                  Steam Subscriber Agreement and the Valve Privacy Policy.
