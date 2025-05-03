@@ -88,6 +88,7 @@
     border-radius: 0.347vw;
     background: rgba(96, 105, 118, 0.4);
     padding: 1vw;
+    width: 100%;
 }
 
 .form-input {
@@ -98,7 +99,10 @@
 
 .button-signin {
     background: linear-gradient(90deg, #7BC74D 0%, #82CA77 100%);
-    color:rgba(34, 40, 49, 1);
+    background-size: 200% 100%;
+    transition: background-position 0.5s, transform 0.1s, filter 0.1s;
+
+    color:rgba(34, 40, 49, 1) !important;
 
     border: none;
     outline: none;
@@ -124,12 +128,14 @@
     text-align: center;
     vertical-align: middle;
 
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.8) !important; 
 
     border: none;
     outline: none;
     border-radius: 0.347vw;
-    background: rgba(57, 62, 70, 1);
+    background: linear-gradient(30deg, rgba(57, 62, 70, 1) 0%, rgb(44, 47, 53) 100%);
+    background-size: 200% 100%;
+    transition: background-position 0.5s, transform 0.1s, filter 0.1s;
 
     width: 31%;
 }
@@ -162,11 +168,16 @@
     line-height: 100%;
     letter-spacing: 0%;
     text-align: center;
+    transition: transform 0.1s, filter 0.2s;
     vertical-align: middle;
     text-decoration: underline;
     text-decoration-style: solid;
     text-decoration-thickness: 0%;
     text-decoration-skip-ink: auto;
+}
+
+.block-form .text-create-new:hover {
+    filter: brightness(0.7);
 }
 
 .form-errors {

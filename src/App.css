@@ -6,3 +6,12 @@
     rgba(0, 0, 0, 0) 7.43%,
     rgba(123, 199, 77, 1) 100%);
 }
+
+.btn:hover {
+  background-position: 100% 0;
+}
+
+.btn:active {
+  transform: scale(0.99);
+  filter: brightness(0.95);
+}

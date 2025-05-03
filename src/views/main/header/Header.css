@@ -31,12 +31,17 @@
 .li {
     /* text */
     cursor: pointer;
+    transition: filter 0.2s, color 0.2s;
     font-family: Roboto;
     font-weight: 400;
     font-size: 1.111vw;
     line-height: 100%;
     letter-spacing: 0%;
     color: white;
+}
+
+.li:hover {
+    filter: brightness(0.85);
 }
 
 .li.active {
@@ -140,7 +145,7 @@
 
     background: rgba(57, 62, 70, 1);
     border: none;
-    color: white;
+    color: white !important;
 
     font-family: Inter;
     font-weight: 500;
@@ -151,11 +156,7 @@
 
     background: linear-gradient(30deg, rgb(64, 72, 80), rgba(57, 62, 70, 1));
     background-size: 200% 100%;
-    transition: background-position 0.5s;
-}
-
-.sign_in:hover {
-    background-position: 100% 0;
+    transition: background-position 0.5s, transform 0.1s, filter 0.1s;
 }
 
 .download {
@@ -166,7 +167,7 @@
     padding: 0.6vw;
 
     background: rgba(123, 199, 77, 1);
-    color: rgba(34, 40, 49, 1);
+    color: rgba(34, 40, 49, 1) !important;
     border: none;
 
     font-family: Inter;
@@ -176,10 +177,19 @@
     letter-spacing: 0%;
     text-align: center;
     
+    background: linear-gradient(30deg, rgba(123, 199, 77, 1), rgb(100, 163, 60));
+    background-size: 200% 100%;
+    transition: background-position 0.5s, transform 0.1s, filter 0.1s;
+
 }
 
 .reg i {
     cursor: pointer;
+    transition: filter 0.2s, color 0.2s;
+}
+
+.reg i:hover {
+    filter: brightness(0.8);
 }
 
 .reg i.active {

@@ -49,7 +49,7 @@ export function Con_bl() {
             <div className='img'></div>
             <div className='name'>Name</div>
             <div className='description'>Description</div>
-            <button>See in Shop <i className="bi bi-box-arrow-up-right"></i></button>
+            <button className='btn'>See in Shop <i className="bi bi-box-arrow-up-right"></i></button>
         </div>
     </>;
 }
@@ -62,7 +62,7 @@ export function ConFree() {
             <div className='con-free-inner'>
                 <div className='con-in-free'>
                     <div><i className="bi bi-gift"></i>Free games!</div>
-                    <button>View More</button>
+                    <button className='btn'>View More</button>
                 </div>
                 <div className='con-free-main'>
                     <FreeCart />

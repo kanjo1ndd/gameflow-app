@@ -97,7 +97,10 @@
 
 .button-signup {
     background: linear-gradient(90deg, #7BC74D 0%, #82CA77 100%);
-    color:rgba(34, 40, 49, 1);
+    background-size: 200% 100%;
+    transition: background-position 0.5s, transform 0.1s, filter 0.1s;
+
+    color:rgba(34, 40, 49, 1) !important;
 
     border: none;
     outline: none;
@@ -146,7 +149,7 @@
 }
 
 .input-error {
-    border: 1px solid #C74D4D !important;
+    border: 0.069vw solid #C74D4D !important;
     border-radius: 0.347vw !important;
 }
 
@@ -237,11 +240,11 @@
 }
 
 .react-select--error .react-select__control {
-    border: 1px solid #C74D4D !important;
+    border: 0.069vw solid #C74D4D !important;
 }
 
 .react-select--error .react-select__control--is-focused {
-    border: 1px solid #C74D4D !important;
+    border: 0.069vw solid #C74D4D !important;
 }
 /* ////////////////////////////////////////////////////////// */
 
@@ -295,7 +298,10 @@
 
 .button-created {
     background: linear-gradient(90deg, #7BC74D 0%, #82CA77 100%);
-    color:rgba(34, 40, 49, 1);
+    background-size: 200% 100%;
+    transition: background-position 0.5s, transform 0.1s, filter 0.1s;
+
+    color:rgba(34, 40, 49, 1) !important;
 
     border: none;
     outline: none;
