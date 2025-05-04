@@ -22,6 +22,7 @@ export default function ContentProfile() {
         }
     }, [token]);
 
+
     return <>
         {token == null ? <>
             <div className='need-authorization'>Need Authorization</div>
@@ -31,7 +32,7 @@ export default function ContentProfile() {
                     <div className='profile-img'/>
                     <div className='nickname-level'>
                         <div className='level'>Level 1</div>
-                        <div className='nickname'>{userData.username ?? 'Nickname'}</div>
+                        <div className='nickname'>{userData.userName ?? 'Nickname'}</div>
                     </div>
                     <div className='about-me'>
                         <div className='text-about-me'>About me:</div>

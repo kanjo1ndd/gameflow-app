@@ -225,9 +225,11 @@
     background: rgba(57, 62, 70, 1);
 }
 
+/* left part */
 .block-game-left-part {
     display: flex;
     position: relative;
+    gap: 1vw;
 }
 
 .game-img {
@@ -236,3 +238,144 @@
     border-radius: 0.486vw;
     background-color: black;
 }
+
+.left-part-text {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 100%;
+    width: 17.708vw;
+}
+
+.category-game {
+    border-radius: 0.285vw;
+    max-width: max-content;
+    display: flex;
+    padding: 0.5vw;
+
+    background: rgba(78, 85, 95, 1);
+    color: rgba(255, 255, 255, 0.8);
+
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 0.833vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+
+.name-game {
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 1.667vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+
+    color: white;
+}
+
+.block-date-com {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 1vw;
+
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 1.111vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.block-flex-date-com {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+
+.icons-left-part {
+    color: white;
+    font-size: 1.229vw;
+    display: flex;
+    gap: 0.5vw;
+}
+/* left part */
+
+.block-game-right-part {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.cost-game {
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 1.111vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: right;
+    vertical-align: middle;
+
+    color: white;
+}
+
+
+.remove-button-add {
+    display: flex;
+    position: relative;
+    align-items: center;
+    gap: 1vw;
+}
+
+.remove {
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 1.111vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.1s, filter 0.2s, color 0.2s;
+
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.remove:active {
+    transform: scale(0.97);
+    filter: brightness(0.9);
+}
+
+.remove:hover {
+    filter: brightness(0.8);
+}
+
+.button-add-cart {
+    background: linear-gradient(30deg, rgba(123, 199, 77, 1), rgb(92, 153, 54));
+    background-size: 200% 100%;
+    transition: background-position 0.5s, transform 0.1s, filter 0.1s;
+
+    color: rgba(34, 40, 49, 1) !important;
+
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 1.111vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+
+    border: none;
+    outline: none;
+
+    border-radius: 0.486vw;
+
+    padding: 0.75vw 0.75vw 0.75vw 0.75vw;
+}
+/* right part */

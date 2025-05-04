@@ -29,7 +29,7 @@ export default function SignIn() {
                 'Authorization': 'Basic ' + credentials
             }
         }).then(data => {
-            let jti = data;
+            let jti = data.jti;
             setToken(jti);
             console.log('Токен после аутентификации:', jti);
             navigate('/Profile');
