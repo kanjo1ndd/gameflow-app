@@ -1,46 +1,71 @@
+import { AppContext } from '../../../AppContext';
 import './ContentProfile.css'
+import { useContext, useEffect, useState } from "react";
+
 
 export default function ContentProfile() {
+
+    const { request, token } = useContext(AppContext);
+    const [userData, setUserData] = useState({});
+
+    useEffect(() => {
+        if(token == null) {
+            setUserData({});
+        }
+        else {
+            request("/api/user/profile")
+            .then(setUserData)
+            .catch(err => {
+                console.error(err);
+                setUserData({});
+            });
+        }
+    }, [token]);
+
     return <>
-        <div className='content-profile'>
-            <div className='block-profile'>
-                <div className='profile-img'/>
-                <div className='nickname-level'>
-                    <div className='level'>Level 1</div>
-                    <div className='nickname'>Nickname</div>
+        {userData.id == null ? <>
+            <div className='need-authorization'>Need Authorization</div>
+        </> : <> 
+            <div className='content-profile'>
+                <div className='block-profile'>
+                    <div className='profile-img'/>
+                    <div className='nickname-level'>
+                        <div className='level'>Level 1</div>
+                        <div className='nickname'>{userData.userName ?? 'Nickname'}</div>
+                    </div>
+                    <div className='about-me'>
+                        <div className='text-about-me'>About me:</div>
+                        <div className='text-description'>Description</div>
+                    </div>
+                    <div className='button-edit'>
+                        <button className="btn button-edit-profile">EDIT PROFILE</button>
+                    </div>
                 </div>
-                <div className='about-me'>
-                    <div className='text-about-me'>About me:</div>
-                    <div className='text-description'>Description</div>
+                <div className='achievements-carts'>
+                    <div className='category-achievements'>Achievements</div>
+                    <div className='block-achievements-for-carts'>
+                        <AchievementsCart />
+                        <AchievementsCart />
+                        <AchievementsCart />
+                        <AchievementsCart />
+                        <AchievementsCart />
+                        <AchievementsCart />
+                    </div>
+                    <div className='show-achievements'>Show more <i className="bi bi-arrow-right"></i></div>
                 </div>
-                <div className='button-edit'>
-                    <button className="button-edit-profile">EDIT PROFILE</button>
+                <div className='game-collection'>
+                    <div className='category-collection'>Game collection</div>
+                    <div className='blocks-collection'>
+                        <CollectionCart />
+                        <CollectionCart />
+                        <CollectionCart />
+                        <CollectionCart />
+                        <CollectionCart />
+                        <CollectionCart />
+                    </div>
                 </div>
             </div>
-            <div className='achievements-carts'>
-                <div className='category-achievements'>Achievements</div>
-                <div className='block-achievements-for-carts'>
-                    <AchievementsCart />
-                    <AchievementsCart />
-                    <AchievementsCart />
-                    <AchievementsCart />
-                    <AchievementsCart />
-                    <AchievementsCart />
-                </div>
-                <div className='show-achievements'>Show more <i className="bi bi-arrow-right"></i></div>
-            </div>
-            <div className='game-collection'>
-                <div className='category-collection'>Game collection</div>
-                <div className='blocks-collection'>
-                    <CollectionCart />
-                    <CollectionCart />
-                    <CollectionCart />
-                    <CollectionCart />
-                    <CollectionCart />
-                    <CollectionCart />
-                </div>
-            </div>
-        </div>
+        </>}
     </>;
 }
 

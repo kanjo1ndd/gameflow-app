@@ -109,8 +109,11 @@
     padding: 0 2vw;
 
     background: rgb(47, 51, 58);
+    background: linear-gradient(30deg, rgb(63, 69, 78), rgb(47, 51, 58));
+    background-size: 200% 100%;
+    transition: background-position 0.5s, transform 0.1s, filter 0.1s;
     border: none;
-    color: white;
+    color: white !important;
 
     font-family: Inter;
     font-weight: 500;
@@ -322,4 +325,13 @@
     height: 1.181vw;
     border-radius: 0.625vw;
     border: 0.15vw solid #222831;
+}
+
+/* ///////////////////////// */
+.need-authorization {
+    width: 79.167vw;
+    height: 100vh;
+    color: white;
+    font-size: 3.333vw;
+    font-family: Roboto;
 }
