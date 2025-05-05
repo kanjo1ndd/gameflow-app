@@ -14,6 +14,11 @@ export default function ContentSupport() {
     ];
 
     const [openIndex, setOpenIndex] = useState(null);
+    const [searchTerm, setSearchTerm] = useState('');
+
+    const filteredSections = supportSections.filter(section =>
+        section.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
     return <>
         <div className='support-block'>
@@ -22,11 +27,14 @@ export default function ContentSupport() {
             </div>
             <div className='search-block'>
                 <i className="bi bi-search"></i>
-                <input placeholder='Find help'></input>
+                <input placeholder='Find help' value={searchTerm}
+                    onChange={e => setSearchTerm(e.target.value)}></input>
             </div>
             <div className='blocks-sections'>
-                {supportSections.map((section, index) => (
-                    <div key={index} className={`support-section ${openIndex === index ? 'open' : ''}`}>
+                {filteredSections.length > 0 ? (
+                    filteredSections.map((section, index) => (
+                    <div key={index} className={`support-section ${openIndex === index ? 'open' : ''}`}
+                        style={{ animationDelay: `${index * 0.11}s` }}>
                         <div className="section-header">
                             {section.title}
                             <div className='chevron' onClick={() => setOpenIndex(openIndex === index ? null : index)}>
@@ -39,7 +47,10 @@ export default function ContentSupport() {
                             </div>
                         )}
                     </div>
-                ))}
+                ))
+            ) : (
+                <div className="no-results">Nothing found.</div>
+            )}
             </div>
             <div className='text-question'>
                 Have any other questions?

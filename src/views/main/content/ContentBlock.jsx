@@ -1,13 +1,32 @@
 import './ContentBlock.css'
+import { useEffect, useState, useContext } from "react";
+import { AppContext } from "../../../AppContext";
 
 /* Для 6-ти иконных */
 
 export default function ContentBlock() {
+
+    const [products, setProducts] = useState([]);
+    const { request } = useContext(AppContext);
+
+    useEffect(() => {
+        request("/api/shop/allCategories")
+            .then(data => setProducts(data))
+            .catch(console.error);
+    }, []);
+
+
     return <>
       <div className='content-div'>
         <div className='category'>Category</div>  {/*категория*/}
         <div className='cards'>
-            <Con />
+            {products.map(product => (
+                <Con
+                    key={product.id}
+                    image={product.imageUrl}
+                    name={product.name}
+                />
+            ))}
             <Con />
             <Con />
             <Con />
@@ -18,12 +37,12 @@ export default function ContentBlock() {
     </>;
 }
 
-export function Con() {
+export function Con({ imageUrl, name}) {
     return <>
         <div className='card'>
-            <div className='card-img'></div> {/* изображение */}
+            <img className='card-img' src={imageUrl} /> {/* изображение */}
             <div className='card-subtitle'>Base Game</div>
-            <div className='card-title'>Name</div> {/* название */}
+            <div className='card-title'>{name}</div> {/* название */}
             <div className='card-price'>UAH Price</div> {/* цена */}
         </div>
     </>;

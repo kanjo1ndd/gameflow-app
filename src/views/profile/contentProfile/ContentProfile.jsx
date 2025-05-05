@@ -1,10 +1,11 @@
 import { AppContext } from '../../../AppContext';
 import './ContentProfile.css'
 import { useContext, useEffect, useState } from "react";
-
+import { useNavigate} from 'react-router-dom'
 
 export default function ContentProfile() {
 
+    const navigate = useNavigate();
     const { request, token } = useContext(AppContext);
     const [userData, setUserData] = useState({});
 
@@ -29,7 +30,7 @@ export default function ContentProfile() {
         </> : <> 
             <div className='content-profile'>
                 <div className='block-profile'>
-                    <div className='profile-img'/>
+                    <img className='profile-img' src={userData.avatarUrl}/>
                     <div className='nickname-level'>
                         <div className='level'>Level 1</div>
                         <div className='nickname'>{userData.userName ?? 'Nickname'}</div>
@@ -39,7 +40,7 @@ export default function ContentProfile() {
                         <div className='text-description'>Description</div>
                     </div>
                     <div className='button-edit'>
-                        <button className="btn button-edit-profile">EDIT PROFILE</button>
+                        <button className="btn button-edit-profile" onClick={() => navigate('/Profile/Edit')}>EDIT PROFILE</button>
                     </div>
                 </div>
                 <div className='achievements-carts'>

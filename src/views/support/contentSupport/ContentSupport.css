@@ -80,9 +80,10 @@ input:focus {
 
 .blocks-sections {
     width: 79.167vw;
-    height: 54.083vw;
     display: flex;
     position: relative;
+
+    gap: 1.5vw;
 
     flex-direction: column;
     justify-content: space-between;
@@ -114,7 +115,6 @@ input:focus {
 
 .support-section.open {
     height: 12vw;
-
     padding: 0 1.5vw 1.5vw 1.5vw;
 }
 
@@ -141,14 +141,34 @@ input:focus {
 .chevron {
     display: flex;
     position: relative;
-
+    cursor: pointer;
     width: 2vw;
+    transition: transform 0.1s, filter 0.2s, color 0.2s;
+}
+
+.chevron:active {
+    transform: scale(0.97);
+    filter: brightness(0.9);
+}
+
+.chevron:hover {
+    filter: brightness(0.8);
 }
 
 .chevron i {
     display: flex;
     position: relative;
     font-size: 2vw;
+}
+
+.no-results {
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 2.333vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: bottom;
+    color: white;
 }
 
 /* Секции */
@@ -183,4 +203,19 @@ input:focus {
     background: linear-gradient(30deg, rgba(123, 199, 77, 1), rgb(92, 153, 54));
     background-size: 200% 100%;
     transition: background-position 0.5s, transform 0.1s, filter 0.1s;
+}
+
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+  
+.support-section {
+    animation: fadeInUp 0.3s ease forwards;
 }

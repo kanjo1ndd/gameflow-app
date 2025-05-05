@@ -8,6 +8,7 @@ import Support from './views/support/Support'
 import WishList from './views/wishlist/WishList'
 import { AppContext } from './AppContext'
 import { useState } from 'react'
+import EditProfile from './views/profile/editProfile/editProfileContent/EditProfile'
 
 function App() {
 
@@ -50,6 +51,7 @@ function App() {
           <Route path="/Profile" element={<Profile />} />
           <Route path="/Support" element={<Support />} />
           <Route path="/WishList" element={<WishList />} />
+          <Route path="/Profile/Edit" element={<EditProfile />} />
         </Routes>
       </AppContext.Provider>
    )

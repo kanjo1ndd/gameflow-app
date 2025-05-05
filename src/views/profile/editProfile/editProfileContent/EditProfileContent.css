@@ -1,0 +1,84 @@
+.content-edit-profile {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    gap: 2.5vw;
+}
+
+.content-edit-profile > div:first-child {
+    margin-top: 2.5vw;
+}
+
+.content-edit-profile > div:last-child {
+    margin-bottom: 2.5vw;
+}
+
+.title-edit-profile {
+    color: rgba(238, 238, 238, 1);
+    width: 79.167vw;
+
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 3vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: bottom;
+}
+
+.main-content-edit-profile {
+    width: 79.167vw;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.left-part-list {
+    display: flex;
+    position: relative;
+    width: 15vw;
+}
+
+.nav-li {
+    list-style-type: none;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 0.5vw;
+}
+
+.li-edit-profile {
+    cursor: pointer;
+    padding: 0.5vw;
+
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 1.111vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: bottom;
+
+    color: rgba(238, 238, 238, 0.8);
+}
+/* left part */
+
+/* right PART */
+.right-part-list {
+    display: flex;
+    position: relative;
+    width: 62vw;
+}
+
+.title-right-part {
+    color: rgba(238, 238, 238, 0.9);
+
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 2vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: bottom;
+}
