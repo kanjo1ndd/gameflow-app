@@ -4,6 +4,7 @@ import countryList from 'react-select-country-list';
 import { useContext, useEffect, useState } from "react";
 import '../../../registration/SignUp.css';
 import { AppContext } from '../../../../AppContext';
+import { useParams } from 'react-router-dom';
 
 const countryOptions = countryList().getData();
 
@@ -25,12 +26,16 @@ export default function EditProfileContent() {
         if (!country) newErrors.country = "(Country is required)";
         return newErrors;
     };
+    const {input} = useParams();
 
     const handleSave = () => {
         const validationErrors = validate();
         setErrors(validationErrors);
         if (Object.keys(validationErrors).length === 0) {
             console.log({ username, phone, country, aboutMe });
+            let input = username+","+phone+","+country.label+","+aboutMe;
+            request('/api/user/'+input)
+            .then(console.log).catch(console.error);
         }
     };
 
