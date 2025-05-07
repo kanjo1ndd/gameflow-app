@@ -48,11 +48,19 @@
     position: relative;
     flex-direction: column;
     gap: 0.5vw;
+    padding: 0;
 }
 
 .li-edit-profile {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease;
+    z-index: 0;
+    width: 14vw;
+
     cursor: pointer;
-    padding: 0.5vw;
+    padding: 1vw;
 
     font-family: Roboto;
     font-weight: 500;
@@ -60,16 +68,50 @@
     line-height: 100%;
     letter-spacing: 0%;
     vertical-align: bottom;
+    border-radius: 0.283vw;
 
     color: rgba(238, 238, 238, 0.8);
+
+}
+
+.li-edit-profile::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(57, 62, 70, 0.5);
+    transition: left 0.5s ease;
+    z-index: -1;
+}
+
+.li-edit-profile:hover::before {
+    left: 0;
+}
+
+.li-edit-profile.active::before {
+    display: none;
+}
+
+.li-edit-profile:hover {
+    color: white;
+}
+
+.li-edit-profile.active {
+    background-color: rgba(57, 62, 70, 1);
+    color: rgba(238, 238, 238, 1);
 }
 /* left part */
 
 /* right PART */
+/* Main */
 .right-part-list {
     display: flex;
     position: relative;
+    flex-direction: column;
     width: 62vw;
+    gap: 1vw;
 }
 
 .title-right-part {
@@ -81,4 +123,256 @@
     line-height: 100%;
     letter-spacing: 0%;
     vertical-align: bottom;
+}
+
+.right-part-list hr {
+    margin: 0;
+    width: 80%;
+    height: 0.139vw;
+    border: 0.139vw solid rgb(90, 99, 112);
+}
+
+.input-edit-profile {
+    display: flex;
+    position: relative;
+    
+    border: none;
+    outline: none;
+
+    border-radius: 0.4vw;
+    padding: 1.5vw 1vw;
+    width: 80%;
+
+    background-color: rgb(61, 67, 75);
+}
+
+.title-category {
+    color: rgba(238, 238, 238);
+
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 1.267vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: bottom;
+}
+
+.for-inputs-edit-profile {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+.for-title-input {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 0.5vw;
+}
+
+.for-inputs-edit-profile > div:last-child {
+    margin-bottom: 4.5vw;
+}
+
+.input-about-me {
+    display: flex;
+    position: relative;
+    
+    border: none;
+    outline: none;
+    resize: none;
+    
+    font-size: 1.111vw;
+    height: 7.5vw;
+
+    border-radius: 0;
+    padding: 0.5vw;
+    width: 80%;
+
+    background-color: rgb(49, 52, 56);
+
+    scrollbar-color: #444 rgb(49, 52, 56);
+}
+
+.buttons-cancel-save {
+    width: 80%;
+    gap: 1vw;
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+}
+
+.button-cancel {
+    border-radius: 0.285vw;
+    padding: 0.8vw 4vw 0.8vw 4vw;
+
+    border: none;
+    color: white !important;
+
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 1.111vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+
+    background: linear-gradient(30deg, rgb(64, 72, 80), rgba(57, 62, 70, 1));
+    background-size: 200% 100%;
+    transition: background-position 0.5s, transform 0.1s, filter 0.1s;
+}
+
+.button-save {
+    border-radius: 0.285vw;
+    padding: 0.8vw 3.5vw 0.8vw 3.5vw;
+
+    color: rgba(34, 40, 49, 1) !important;
+    border: none;
+
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 1.111vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    
+    background: linear-gradient(30deg, rgba(123, 199, 77, 1), rgb(100, 163, 60));
+    background-size: 200% 100%;
+    transition: background-position 0.5s, transform 0.1s, filter 0.1s;
+}
+/* Main */
+
+/* Avatar */
+.img-avatar-profile {
+    background-color: black;
+    width: 12.778vw;
+    height: 12.778vw;
+    border-radius: 0.285vw;
+}
+
+.avatar-button-upload {
+    width: 80%;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+
+.button-upload {
+    border-radius: 0.285vw;
+    padding: 0.7vw 2vw 0.7vw 2vw;
+    height: max-content;
+
+    border: none;
+    color: white !important;
+
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 1.111vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+
+    background: linear-gradient(30deg, rgb(45, 50, 56), rgb(39, 42, 48));
+    background-size: 200% 100%;
+    transition: background-position 0.5s, transform 0.1s, filter 0.1s;
+}
+/* Avatar */
+
+/* валидация */
+.title-category span {
+    color: #C74D4D;
+    font-size: 0.7vw;
+}
+
+.react-select__control {
+    border: none !important;
+    outline: none !important;
+    min-height: 2.2vw !important;
+    border-radius: 0.347vw !important;
+    background-color: rgb(61, 67, 75) !important;
+    padding: 0 1vw !important;
+    width: 80% !important;
+    font-size: 1.111vw !important;
+    color: black !important;
+    box-shadow: none !important;
+    transition: none !important;
+}
+  
+.react-select__control--is-focused {
+    box-shadow: none !important;
+    border: none !important;
+}
+  
+.react-select__value-container {
+    padding: 0 !important;
+    color: black !important;
+}
+  
+.react-select__input-container {
+    color: black !important;
+}
+  
+.react-select__single-value {
+    color: white !important;
+}
+  
+.react-select__indicator-separator {
+    display: none !important;
+}
+  
+.react-select__menu {
+    background-color: white !important;
+    color: black !important;
+    font-size: 1vw !important;
+    border-radius: 0.347vw !important;
+    z-index: 10 !important;
+    width: 80% !important;
+    height: max-content;
+}
+  
+.react-select__option {
+    cursor: pointer !important;
+    padding: 0.6vw 1vw !important;
+    color: black !important;
+}
+  
+.react-select__option--is-focused {
+    background-color: rgba(96, 105, 118, 0.2) !important;
+}
+  
+.react-select__option--is-selected {
+    background-color: rgba(96, 105, 118, 0.4) !important;
+    color: black !important;
+}
+  
+.react-select__indicators {
+    color: white !important;
+}
+  
+.react-select__dropdown-indicator {
+    padding: 0.5vw !important;
+}
+
+.react-select__dropdown-indicator {
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 2vw !important;
+    height: 100% !important;
+}
+  
+.react-select__indicator svg {
+    width: 1.5vw !important;
+    height: 1.5vw !important;
+
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.react-select--error .react-select__control {
+    border: 0.069vw solid #C74D4D !important;
+}
+
+.react-select--error .react-select__control--is-focused {
+    border: 0.069vw solid #C74D4D !important;
 }

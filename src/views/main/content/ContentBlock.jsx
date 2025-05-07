@@ -23,7 +23,7 @@ export default function ContentBlock() {
             {products.map(product => (
                 <Con
                     key={product.id}
-                    image={product.imageUrl}
+                    imageUrl={product.imageUrl}
                     name={product.name}
                 />
             ))}
