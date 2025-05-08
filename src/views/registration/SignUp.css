@@ -95,6 +95,10 @@
     color: white;
 }
 
+.bi-chevron-left:hover {
+    filter: brightness(0.85);
+}
+
 .button-signup {
     background: linear-gradient(90deg, #7BC74D 0%, #82CA77 100%);
     background-size: 200% 100%;
@@ -155,7 +159,7 @@
 
 /* Страны */
 
-.react-select__control {
+.react-selects__control {
     border: none !important;
     outline: none !important;
     min-height: 4.2vw !important;
@@ -169,29 +173,29 @@
     transition: none !important;
 }
   
-.react-select__control--is-focused {
+.react-selects__control--is-focused {
     box-shadow: none !important;
     border: none !important;
 }
   
-.react-select__value-container {
+.react-selects__value-container {
     padding: 0 !important;
     color: black !important;
 }
   
-.react-select__input-container {
+.react-selects__input-container {
     color: black !important;
 }
   
-.react-select__single-value {
+.react-selects__single-value {
     color: black !important;
 }
   
-.react-select__indicator-separator {
+.react-selects__indicator-separator {
     display: none !important;
 }
   
-.react-select__menu {
+.react-selects__menu {
     background-color: white !important;
     color: black !important;
     font-size: 1vw !important;
@@ -200,30 +204,30 @@
     width: 100% !important;
 }
   
-.react-select__option {
+.react-selects__option {
     cursor: pointer !important;
     padding: 0.6vw 1vw !important;
     color: black !important;
 }
   
-.react-select__option--is-focused {
+.react-selects__option--is-focused {
     background-color: rgba(96, 105, 118, 0.2) !important;
 }
   
-.react-select__option--is-selected {
+.react-selects__option--is-selected {
     background-color: rgba(96, 105, 118, 0.4) !important;
     color: black !important;
 }
   
-.react-select__indicators {
+.react-selects__indicators {
     color: black !important;
 }
   
-.react-select__dropdown-indicator {
+.react-selects__dropdown-indicator {
     padding: 0.5vw !important;
 }
 
-.react-select__dropdown-indicator {
+.react-selects__dropdown-indicator {
     padding: 0 !important;
     display: flex !important;
     align-items: center !important;
@@ -232,18 +236,18 @@
     height: 100% !important;
 }
   
-.react-select__indicator svg {
+.react-selects__indicator svg {
     width: 1.5vw !important;
     height: 1.5vw !important;
 
     color: black !important;
 }
 
-.react-select--error .react-select__control {
+.react-select--errors .react-select__control {
     border: 0.069vw solid #C74D4D !important;
 }
 
-.react-select--error .react-select__control--is-focused {
+.react-select--errors .react-select__control--is-focused {
     border: 0.069vw solid #C74D4D !important;
 }
 /* ////////////////////////////////////////////////////////// */

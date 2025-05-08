@@ -141,8 +141,8 @@ export default function SignUp() {
                                         value={country}
                                         onChange={setCountry}
                                         options={countryOptions}
-                                        classNamePrefix="react-select"
-                                        className={`${errors.country ? 'react-select--error' : ''}`}
+                                        classNamePrefix="react-selects"
+                                        className={`${errors.country ? 'react-select--errors' : ''}`}
                                         placeholder="Select a country..."
                                         isClearable
                                     />
