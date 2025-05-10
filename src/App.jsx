@@ -9,6 +9,7 @@ import WishList from './views/wishlist/WishList'
 import { AppContext } from './AppContext'
 import { useState } from 'react'
 import EditProfile from './views/profile/editProfile/editProfileContent/EditProfile'
+import Category from './views/category/Category'
 
 function App() {
 
@@ -52,6 +53,7 @@ function App() {
           <Route path="/Support" element={<Support />} />
           <Route path="/WishList" element={<WishList />} />
           <Route path="/Profile/Edit" element={<EditProfile />} />
+          <Route path="/Category/:name" element={<Category />} />
         </Routes>
       </AppContext.Provider>
    )
