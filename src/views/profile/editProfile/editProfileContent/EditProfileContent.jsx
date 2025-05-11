@@ -108,23 +108,24 @@ export default function EditProfileContent() {
                         setCountry={setCountry}
                         aboutUser={aboutUser}
                         setAboutUser={setAboutUser}
-                        errors={errors} 
+                        errors={errors}
+                        onCancel={handleCancel}
+                        onSave={handleSave}
                          />}
                     {activeTab === "avatar" && (
-                        <Avatar avatarUrl={userData.avatarUrl} preview={preview} 
-                            setPreview={setPreview} />
+                        <Avatar avatarUrl={userData.avatarUrl} 
+                            preview={preview} 
+                            setPreview={setPreview}
+                            onCancel={handleCancel}
+                            /* onSave={handleSave}*/ /> /*Здесь поставить функцию для сохранения аватара*/
                     )}
-                    <div className='buttons-cancel-save'>
-                        <button className='btn button-cancel' onClick={handleCancel}>Cancel</button>
-                        <button className='btn button-save' onClick={handleSave}>Save</button>
-                    </div>
                 </div>
             </div>
         </div>
     </>;
 }
 
-export function Main({ username, setUsername, phone, setPhone, country, setCountry, aboutUser, setAboutUser, errors }) {
+export function Main({ username, setUsername, phone, setPhone, country, setCountry, aboutUser, setAboutUser, errors, onCancel, onSave }) {
     return <>
         <div className='title-right-part'>Main</div>
         <hr/>
@@ -174,10 +175,11 @@ export function Main({ username, setUsername, phone, setPhone, country, setCount
                 />
             </div>
         </div>
+        <EditButtons onCancel={onCancel} onSave={onSave} />
     </>;
 }
 
-export function Avatar({ avatarUrl, preview, setPreview }) {
+export function Avatar({ avatarUrl, preview, setPreview, onCancel, onSave }) {
 
     const fileInputRef = useRef(null);
 
@@ -214,5 +216,15 @@ export function Avatar({ avatarUrl, preview, setPreview }) {
                 Upload your avatar
             </button>
         </div>
+        <EditButtons onCancel={onCancel} onSave={onSave} />
     </>;
+}
+
+function EditButtons({ onCancel, onSave }) {
+    return (
+        <div className='buttons-cancel-save'>
+            <button className='btn button-cancel' onClick={onCancel}>Cancel</button>
+            <button className='btn button-save' onClick={onSave}>Save</button>
+        </div>
+    );
 }
