@@ -14,17 +14,21 @@
 .path {
     display: flex;
     align-items: center;
-    width: 38.889vw;
-    height: 61.905%;
+    height: 100%;
     top: 19.048vh;
     left: 12.083vw;
     gap: 2.847vw;
 }
 
+.path nav {
+    display: flex;
+    position: relative;
+    height: 100%;
+}
+
 .nav {
     list-style-type: none;
-    width: 16.5vw;
-    height: 1.9%;
+    align-items: center;
     gap: 2.431vw;
 }
 
@@ -38,6 +42,29 @@
     line-height: 100%;
     letter-spacing: 0%;
     color: white;
+}
+
+.li-category {
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: 4.375vw !important;
+    max-width: max-content;
+}
+
+.li-category-label {
+    cursor: pointer;
+    transition: filter 0.2s, color 0.2s;
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 1.111vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: white;
+}
+
+.li-category-label:hover {
+    filter: brightness(0.85);
 }
 
 .li:hover {
@@ -194,4 +221,45 @@
 
 .reg i.active {
     color: rgba(123, 199, 77, 1);
+}
+
+/* выпадающий список */
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: -80%;
+    width: 59vw;
+    background: rgb(58, 66, 78);
+    z-index: 9999;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5vw;
+
+    margin: 0;
+    padding: 1vw;
+    border-radius: 0 0 0.283vw 0.283vw;
+
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 1.111vw;
+    color: white;
+}
+
+.dropdown-item {
+    padding: 0.8vw 1vw;
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 0.2vw;
+    background: rgba(255, 255, 255, 0.05);
+    transition: filter 0.2s;
+
+    flex: 1 1 auto;
+    max-width: calc((100% - 5 * 0.5vw) / 6); /* максимум 6 в строке */
+}
+
+.dropdown-item:hover {
+    filter: brightness(0.8);
 }
