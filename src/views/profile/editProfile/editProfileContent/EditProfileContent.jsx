@@ -27,6 +27,7 @@ export default function EditProfileContent() {
         if (!country) newErrors.country = "(Country is required)";
         return newErrors;
     };
+    const {input} = useParams();
 
     const handleSave = () => {
         const validationErrors = validate();
