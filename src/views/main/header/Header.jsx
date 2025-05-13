@@ -1,6 +1,6 @@
 import './Header.css'
-import { useNavigate, useLocation } from 'react-router-dom'
-import { useContext, useState } from 'react';
+import { useNavigate, useLocation} from 'react-router-dom'
+import { useEffect, useState, useContext } from "react";
 import { AppContext } from '../../../AppContext';
 
 export default function Header() {
@@ -10,7 +10,18 @@ export default function Header() {
     const {token, setToken} = useContext(AppContext);
     const [showDropdown, setShowDropdown] = useState(false);
 
-    const gameCategories = ['Action', 'Adventure', 'Strategy', 'RPG', 'Simulation', 'Sports', 'fdgdfg'];
+    const [categories, setCategory] = useState([]);
+    const { request } = useContext(AppContext);
+
+    useEffect(() => {
+        request("/api/shop/allCategories")
+            .then(data => setCategory(data))
+            .catch(console.error);
+    }, []);
+
+    const gameCategories = categories.map(cat => cat.name);
+
+    // const gameCategories = ['FARCRY 3', 'Adventure', 'Strategy', 'RPG', 'Simulation', 'Sports', 'fdgdfg'];
 
     return <>
         <div className='head'>

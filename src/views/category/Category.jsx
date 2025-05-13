@@ -1,26 +1,40 @@
 import './Category.css';
 import Footer from "../main/footer/Footer";
 import Header from "../main/header/Header";
+import { useEffect, useState, useContext } from "react";
 import { useParams } from 'react-router-dom';
+import { AppContext } from '../../AppContext';
 
 export default function Category() {
     const { name } = useParams();
+
+    const [categories, setCategory] = useState([]);
+    const { request } = useContext(AppContext);
+
+    useEffect(() => {
+        request("/api/shop/allCategories")
+            .then(data => setCategory(data))
+            .catch(console.error);
+    }, []);
+
+    // const categoriesDescription = categories.map(cat => cat.description);
+
     return <>
         <Header />
-            <div className='container-category'>
-                <div className='category-title'>{name}</div>
-                <div className='img-description-category'>
-                    <img className='main-img-category' />
-                    <div className='description-category'>
-                        Description
-                    </div>
-                </div>
-                <hr className='hr-category'/>
-                <div className='container-product'>
-                    {/* <Profuct />
-                    <Profuct /> */}
+        <div className='container-category'>
+            <div className='category-title'>{name}</div>
+            <div className='img-description-category'>
+                <img className='main-img-category' />
+                <div className='description-category'>      
+                    
                 </div>
             </div>
+            <hr className='hr-category'/>
+            <div className='container-product'>
+                {/* <Profuct />
+                <Profuct /> */}
+            </div>
+        </div>
         <Footer />
     </>;
 }
