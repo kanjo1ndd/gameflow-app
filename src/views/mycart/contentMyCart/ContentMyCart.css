@@ -1,0 +1,110 @@
+.content-MyCart {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    gap: 2.5vw;
+}
+
+.content-MyCart > div:first-child {
+    margin-top: 2.5vw;
+}
+
+.content-MyCart> div:last-child {
+    margin-bottom: 25vw;
+}
+
+.mainContent-mycart {
+    width: 79.167vw;
+
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    gap: 2vw;
+}
+
+.block-game-mycart {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    width: 57.014vw;
+    height: 13.889vw;
+    border-radius: 0.486vw;
+    padding: 1vw;
+    background: rgba(57, 62, 70, 1);
+}
+
+.block-totalsum {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20.139vw;
+    padding: 1vw 0 1vw 0;
+}
+
+.totalSum {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 1.667vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: bottom;
+
+    color: white;
+}
+
+.tax {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 1.111vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.description-totalsum {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 0.972vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.button-check-out {
+    background: linear-gradient(30deg, rgba(123, 199, 77, 1), rgb(92, 153, 54));
+    background-size: 200% 100%;
+    transition: background-position 0.5s, transform 0.1s, filter 0.1s;
+
+    color: rgba(34, 40, 49, 1) !important;
+
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 1.111vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+
+    border: none;
+    outline: none;
+
+    border-radius: 0.486vw;
+
+    padding: 1vw;
+}

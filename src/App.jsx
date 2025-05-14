@@ -10,6 +10,7 @@ import { AppContext } from './AppContext'
 import { useState } from 'react'
 import EditProfile from './views/profile/editProfile/editProfileContent/EditProfile'
 import Category from './views/category/Category'
+import MyCart from './views/mycart/MyCart'
 
 function App() {
 
@@ -54,6 +55,7 @@ function App() {
           <Route path="/WishList" element={<WishList />} />
           <Route path="/Profile/Edit" element={<EditProfile />} />
           <Route path="/Category/:name" element={<Category />} />
+          <Route path="/MyCart" element={<MyCart />} />
         </Routes>
       </AppContext.Provider>
    )

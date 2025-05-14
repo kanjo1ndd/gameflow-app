@@ -337,6 +337,7 @@
 
 .remove {
     font-family: Inter;
+    padding: 0.75vw;
     font-weight: 500;
     font-size: 1.111vw;
     line-height: 100%;

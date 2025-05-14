@@ -76,7 +76,8 @@ export default function Header() {
                         onClick={() => navigate('/SignIn')}/>
                     <i className={`bi bi-suit-heart ${location.pathname === '/WishList' ? 'active' : ''}`}
                         onClick={() => navigate('/SignIn')}/>
-                    <i className="bi bi-cart3"/>
+                    <i className={`bi bi-cart3 ${location.pathname === '/MyCart' ? 'active' : ''}`} 
+                        onClick={() => navigate('/MyCart')}/>
                     <i className="bi bi-globe2"/>
                     <button className='btn sign_in' onClick={() => navigate('/SignIn')}>Sign in</button>
                 </> : <>
@@ -84,7 +85,8 @@ export default function Header() {
                         onClick={() => navigate('/Profile')}/>
                     <i className={`bi bi-suit-heart ${location.pathname === '/WishList' ? 'active' : ''}`}
                         onClick={() => navigate('/WishList')}/>
-                    <i className="bi bi-cart3"/>
+                    <i className={`bi bi-cart3 ${location.pathname === '/MyCart' ? 'active' : ''}`} 
+                        onClick={() => navigate('/MyCart')}/>
                     <i className="bi bi-globe2"/>
                     <button className='btn sign_in' title={token} onClick={() => {setToken(null); navigate('/');}}>Sign out</button>
                 </>}
