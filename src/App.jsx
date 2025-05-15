@@ -54,7 +54,7 @@ function App() {
           <Route path="/Support" element={<Support />} />
           <Route path="/WishList" element={<WishList />} />
           <Route path="/Profile/Edit" element={<EditProfile />} />
-          <Route path="/Category/:name" element={<Category />} />
+          <Route path="/Category/:id" element={<Category />} />
           <Route path="/MyCart" element={<MyCart />} />
         </Routes>
       </AppContext.Provider>

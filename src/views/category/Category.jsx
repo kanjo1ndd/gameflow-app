@@ -6,33 +6,31 @@ import { useParams } from 'react-router-dom';
 import { AppContext } from '../../AppContext';
 
 export default function Category() {
-    const { name } = useParams();
+    const { id } = useParams();
 
     const [categories, setCategory] = useState([]);
     const { request } = useContext(AppContext);
 
-    useEffect(() => {
-        request("/api/shop/allCategories")
-            .then(data => setCategory(data))
-            .catch(console.error);
-    }, []);
-
-    // const categoriesDescription = categories.map(cat => cat.description);
+    useEffect (() => {
+        request("/api/shop/" + id)
+        .then(data => setCategory(data))
+        .catch(j => console.error(j));
+    }, [id]);
 
     return <>
         <Header />
         <div className='container-category'>
-            <div className='category-title'>{name}</div>
+            <div className='category-title'>{categories.name}</div>
             <div className='img-description-category'>
-                <img className='main-img-category' />
+                <img className='main-img-category' src={categories.imageUrl}/>
                 <div className='description-category'>      
-                    
+                    {categories.description}
                 </div>
             </div>
             <hr className='hr-category'/>
             <div className='container-product'>
-                {/* <Profuct />
-                <Profuct /> */}
+                <Profuct />
+                <Profuct />
             </div>
         </div>
         <Footer />

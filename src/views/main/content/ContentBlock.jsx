@@ -6,27 +6,11 @@ import { AppContext } from "../../../AppContext";
 
 export default function ContentBlock() {
 
-    const [products, setProducts] = useState([]);
-    const { request } = useContext(AppContext);
-
-    useEffect(() => {
-        request("/api/shop/allCategories")
-            .then(data => setProducts(data))
-            .catch(console.error);
-    }, []);
-
-
     return <>
       <div className='content-div'>
         <div className='category'>Category</div>  {/*категория*/}
         <div className='cards'>
-            {products.map(product => (
-                <Con
-                    key={product.id}
-                    imageUrl={product.imageUrl}
-                    name={product.name}
-                />
-            ))}
+            <Con />
             <Con />
             <Con />
             <Con />
@@ -37,12 +21,12 @@ export default function ContentBlock() {
     </>;
 }
 
-export function Con({ imageUrl, name}) {
+export function Con() {
     return <>
         <div className='card'>
-            <img className='card-img' src={imageUrl} /> {/* изображение */}
+            <img className='card-img' /> {/* изображение */}
             <div className='card-subtitle'>Base Game</div>
-            <div className='card-title'>{name}</div> {/* название */}
+            <div className='card-title'>Name Game</div> {/* название */}
             <div className='card-price'>UAH Price</div> {/* цена */}
         </div>
     </>;

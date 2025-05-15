@@ -37,7 +37,7 @@ export default function ContentProfile() {
                     </div>
                     <div className='about-me'>
                         <div className='text-about-me'>About me:</div>
-                        <div className='text-description'>Description</div>
+                        <div className='text-description'>{userData.aboutUser ?? 'Description'}</div>
                     </div>
                     <div className='button-edit'>
                         <button className="btn button-edit-profile" onClick={() => navigate('/Profile/Edit')}>EDIT PROFILE</button>

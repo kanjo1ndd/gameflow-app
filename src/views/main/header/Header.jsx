@@ -21,8 +21,6 @@ export default function Header() {
 
     const gameCategories = categories.map(cat => cat.name);
 
-    // const gameCategories = ['FARCRY 3', 'Adventure', 'Strategy', 'RPG', 'Simulation', 'Sports', 'fdgdfg'];
-
     return <>
         <div className='head'>
             <div className='logo'>
@@ -44,16 +42,16 @@ export default function Header() {
                             <span className="li-category-label">Category</span>
                             {showDropdown && (
                                 <ul className="dropdown">
-                                    {gameCategories.map((cat, index) => (
+                                    {categories.map((cat, index) => (
                                     <li
                                         key={index}
                                         className="dropdown-item"
                                         onClick={() => {
-                                        navigate(`/Category/${cat.toLowerCase()}`);
+                                        navigate(`/Category/${cat.slug}`);
                                         setShowDropdown(false);
                                         }}
                                     >
-                                        {cat}
+                                        {cat.name}
                                     </li>
                                     ))}
                                 </ul>
@@ -77,7 +75,7 @@ export default function Header() {
                     <i className={`bi bi-suit-heart ${location.pathname === '/WishList' ? 'active' : ''}`}
                         onClick={() => navigate('/SignIn')}/>
                     <i className={`bi bi-cart3 ${location.pathname === '/MyCart' ? 'active' : ''}`} 
-                        onClick={() => navigate('/MyCart')}/>
+                        onClick={() => navigate('/SignIn')}/>
                     <i className="bi bi-globe2"/>
                     <button className='btn sign_in' onClick={() => navigate('/SignIn')}>Sign in</button>
                 </> : <>
