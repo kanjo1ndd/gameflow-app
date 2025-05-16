@@ -27,16 +27,33 @@ export default function EditProfileContent() {
         if (!country) newErrors.country = "(Country is required)";
         return newErrors;
     };
+    
     const {input} = useParams();
 
-    const handleSave = () => {
-        const validationErrors = validate();
-        setErrors(validationErrors);
-        if (Object.keys(validationErrors).length === 0) {
-            console.log({ username, phone, country, aboutUser });
-            let input = username+","+phone+","+country.label+","+aboutUser;
-            request('/api/user/'+input)
-            .then(console.log).catch(console.error);
+    const handleSave = (avatarImg = null) => {
+        if (activeTab === "main") {
+            const validationErrors = validate();
+            setErrors(validationErrors);
+            if (Object.keys(validationErrors).length === 0) {
+                let input = username + "," + phone + "," + country.label + "," + aboutUser;
+                request('/api/user/' + input)
+                    .then(() => console.log("Main profile updated"))
+                    .catch(console.error);
+            }
+        }
+
+        if (activeTab === "avatar" && avatarImg) {
+            const formData = new FormData();
+            formData.append("formFile", avatarImg);
+
+            request('/api/user/setAvatar', {
+                method: 'POST',
+                body: formData,
+            })
+                .then(() => {
+                    console.log("Avatar uploaded");
+                })
+                .catch(console.error);
         }
     };
 
@@ -117,7 +134,7 @@ export default function EditProfileContent() {
                             preview={preview} 
                             setPreview={setPreview}
                             onCancel={handleCancel}
-                            /* onSave={handleSave}*/ /> /*Здесь поставить функцию для сохранения аватара*/
+                            onSave={handleSave} /> /*Здесь поставить функцию для сохранения аватара*/
                     )}
                 </div>
             </div>
@@ -182,6 +199,7 @@ export function Main({ username, setUsername, phone, setPhone, country, setCount
 export function Avatar({ avatarUrl, preview, setPreview, onCancel, onSave }) {
 
     const fileInputRef = useRef(null);
+    const [avatarImg, setAvatarImg] = useState(null);
 
     const handleUploadClick = () => {
         fileInputRef.current.click();
@@ -192,10 +210,10 @@ export function Avatar({ avatarUrl, preview, setPreview, onCancel, onSave }) {
         if (file && file.type.startsWith("image/")) {
             const reader = new FileReader();
             reader.onloadend = () => {
-                setPreview(reader.result); // превью
-                // здесь можно сделать загрузку на сервер, если нужно
+                setPreview(reader.result);
             };
             reader.readAsDataURL(file);
+            setAvatarImg(file);
         }
         event.target.value = null;
     };
@@ -216,7 +234,7 @@ export function Avatar({ avatarUrl, preview, setPreview, onCancel, onSave }) {
                 Upload your avatar
             </button>
         </div>
-        <EditButtons onCancel={onCancel} onSave={onSave} />
+        <EditButtons onCancel={onCancel} onSave={() => onSave(avatarImg)} />
     </>;
 }
 
