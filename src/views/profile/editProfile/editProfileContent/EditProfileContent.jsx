@@ -46,14 +46,15 @@ export default function EditProfileContent() {
             const formData = new FormData();
             formData.append("formFile", avatarImg);
 
-            request('/api/user/setAvatar', {
+            request('/api/user/setAvatar/', {
                 method: 'POST',
                 body: formData,
-            })
-                .then(() => {
-                    console.log("Avatar uploaded");
-                })
-                .catch(console.error);
+            }).then((response) => {
+                console.log("Avatar uploaded");
+                if (response.data?.avatarUrl) {
+                    setPreview(response.data.avatarUrl);
+                }
+            }).catch(console.error);
         }
     };
 
@@ -134,7 +135,7 @@ export default function EditProfileContent() {
                             preview={preview} 
                             setPreview={setPreview}
                             onCancel={handleCancel}
-                            onSave={handleSave} /> /*Здесь поставить функцию для сохранения аватара*/
+                            onSave={handleSave} />
                     )}
                 </div>
             </div>
@@ -222,7 +223,8 @@ export function Avatar({ avatarUrl, preview, setPreview, onCancel, onSave }) {
         <div className='title-right-part'>Avatar</div>
         <hr />
         <div className='avatar-button-upload'>
-            <img className='img-avatar-profile' src={preview || null}/>
+            <img className='img-avatar-profile' src={preview && preview!== 'https://localhost:7202/Admin/Image/'
+                        ? preview : '/unknownUser.jpg' || '/unknownUser.jpg'}/>
             <input
                 type="file"
                 accept="image/*"

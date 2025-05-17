@@ -30,7 +30,8 @@ export default function ContentProfile() {
         </> : <> 
             <div className='content-profile'>
                 <div className='block-profile'>
-                    <img className='profile-img' src={userData.avatarUrl}/>
+                    <img className='profile-img' src={userData.avatarUrl && userData.avatarUrl !== 'https://localhost:7202/Admin/Image/'
+                        ? userData.avatarUrl : '/unknownUser.jpg'}/>
                     <div className='nickname-level'>
                         <div className='level'>Level 1</div>
                         <div className='nickname'>{userData.userName ?? 'Nickname'}</div>
