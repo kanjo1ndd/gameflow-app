@@ -54,7 +54,7 @@ export default function ContentProfile() {
                         <AchievementsCart />
                         <AchievementsCart />
                     </div>
-                    <div className='show-achievements'>Show more <i className="bi bi-arrow-right"></i></div>
+                    <div className='show-achievements' onClick={() => navigate('/Achievements')}>Show more <i className="bi bi-arrow-right"></i></div>
                 </div>
                 <div className='game-collection'>
                     <div className='category-collection'>Game collection</div>

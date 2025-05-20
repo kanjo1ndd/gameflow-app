@@ -1,0 +1,51 @@
+.content-Achievements {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    gap: 2.5vw;
+}
+
+.content-Achievements > div:first-child {
+    margin-top: 2.5vw;
+}
+
+.content-Achievements > div:last-child {
+    margin-bottom: 2.5vw;
+}
+
+.title-AchievementsBlock {
+    width: 79.167vw;
+
+    display: flex;
+    position: relative;
+    gap: 2vw;
+
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 3.333vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: bottom;
+    color: white;
+}
+
+.amount-Achievements {
+    width: 79.167vw;
+
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 1.25vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.main-contentblock-for-Achievements {
+    
+}

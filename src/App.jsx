@@ -11,6 +11,7 @@ import { useState } from 'react'
 import EditProfile from './views/profile/editProfile/editProfileContent/EditProfile'
 import Category from './views/category/Category'
 import MyCart from './views/mycart/MyCart'
+import Achievements from './views/achievements/Achievements'
 
 function App() {
 
@@ -56,6 +57,7 @@ function App() {
           <Route path="/Profile/Edit" element={<EditProfile />} />
           <Route path="/Category/:id" element={<Category />} />
           <Route path="/MyCart" element={<MyCart />} />
+          <Route path="/Achievements" element={<Achievements />} />
         </Routes>
       </AppContext.Provider>
    )
