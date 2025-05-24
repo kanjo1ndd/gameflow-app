@@ -1,0 +1,140 @@
+.content-productCart {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    gap: 2.5vw;
+}
+
+.content-productCart > div:first-child {
+    margin-top: 2.5vw;
+}
+
+.content-productCart > div:last-child {
+    margin-bottom: 2.5vw;
+}
+
+.title-productCart {
+    width: 79.167vw;
+
+    display: flex;
+    position: relative;
+    gap: 2vw;
+
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 3.333vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: bottom;
+    color: white;
+}
+
+.main-content-productCart {
+    width: 79.167vw;
+
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+
+.main-content-productCart hr {
+    margin: 0;
+
+    width: 0.139vw;
+    height: 50vw;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.big-menu-Cart {
+    width: 52.431vw;
+
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+
+.big-img-Cart {
+    width: 100%;
+    height: 29.514vw;
+}
+
+/* правая часть */
+.mini-menu-Cart {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 1vw;
+
+    width: 24.861vw;
+}
+
+.logo-productCart {
+    width: 100%;
+    height: 13.958vw;
+}
+
+.description-productCart-mini-menu {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 1.25vw;
+    letter-spacing: 0%;
+
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.buttons-wishlist-addCart {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+
+.button-addCart {
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 1.111vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+
+    background: linear-gradient(30deg, rgba(123, 199, 77, 1), rgb(92, 153, 54));
+    background-size: 200% 100%;
+    transition: background-position 0.5s, transform 0.1s, filter 0.1s;
+
+    color: rgba(34, 40, 49, 1) !important;
+
+    border: none;
+    outline: none;
+
+    border-radius: 0.243vw;
+
+    padding: 1vw 3vw 1vw 3vw;
+
+}
+
+.button-Wishlist {
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 1.111vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+
+    color: rgba(255, 255, 255, 0.9) !important;
+
+    background: linear-gradient(30deg, rgba(57, 62, 70, 1), rgb(41, 44, 49));
+    background-size: 200% 100%;
+    transition: background-position 0.5s, transform 0.1s, filter 0.1s;
+
+    border: none;
+    outline: none;
+
+    border-radius: 0.243vw;
+
+    padding: 1vw 3.75vw 1vw 3.75vw;
+}
+/* правая часть */
