@@ -44,23 +44,38 @@
 
 .main-content-productCart hr {
     margin: 0;
-
     width: 0.139vw;
-    height: 50vw;
+    height: 100%;
     background-color: rgba(255, 255, 255, 0.3);
 }
 
-.big-menu-Cart {
+.block-for-img {
+    width: 100%;
+
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    gap: 1.05vw;
+}
+
+.big-menu-productCart {
     width: 52.431vw;
 
     display: flex;
     position: relative;
     flex-direction: column;
+    gap: 2vw;
 }
 
-.big-img-Cart {
+.big-img-productCart {
     width: 100%;
     height: 29.514vw;
+    border-radius: 0.486vw;
+}
+
+.mini-img-productCart {
+    width: 12.292vw;
+    height: 6.944vw;
 }
 
 /* правая часть */
@@ -138,3 +153,67 @@
     padding: 1vw 3.75vw 1vw 3.75vw;
 }
 /* правая часть */
+
+/* О игре */
+.title-in-productCart {
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 2.222vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+
+    color: white;
+}
+
+.description-in-productCart {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 1.111vw;
+    letter-spacing: 0%;
+
+    color: rgba(255, 255, 255, 0.601);
+}
+/* О игре */
+
+/* Системные требования */
+.block-system-requirements {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 1.25vw;
+    letter-spacing: 0%;
+
+    color: white;
+}
+
+.system-requirements {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+.left-part-text {
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 0.972vw;
+
+    color: rgba(255, 255, 255, 0.7);
+    width: max-content;
+
+    display: flex;
+}
+
+.right-part-text {
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 0.972vw;
+    letter-spacing: 0%;
+
+    display: flex;
+    position: relative;
+}
+/* Системные требования */

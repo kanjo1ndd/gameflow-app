@@ -6,8 +6,30 @@ export default function ContentCartProduct() {
         <div className='content-productCart'>
             <div className='title-productCart'>Name Game</div>
             <div className='main-content-productCart'>
-                <div className='big-menu-Cart'>
-                    <img className='big-img-Cart'/>
+                <div className='big-menu-productCart'>
+                    <div className='block-for-img'>
+                        <img className='big-img-productCart'/>
+                        <img className='mini-img-productCart'/>
+                        <img className='mini-img-productCart'/>
+                        <img className='mini-img-productCart'/>
+                        <img className='mini-img-productCart'/>
+                    </div>
+                    <div className='title-in-productCart'>Aboit this game</div>
+                    <div className='description-in-productCart'>Description</div>
+                    <img className='big-img-productCart'/>
+                    <div className='description-in-productCart'>Description</div>
+                    <div className='title-in-productCart'>System Requirements</div>
+                    <div className='block-system-requirements'>
+                        <div className='system-requirements'>
+                            <div>Minimum</div>
+                            <SystemRequirements />
+                        </div>
+                        <div className='system-requirements'>
+                            <div>Recommended</div>
+                            <SystemRequirements />
+                        </div>
+                    </div>
+                    <div className='title-in-productCart'>Achievements</div>
                 </div>
                 <hr/>
                 <div className='mini-menu-Cart'>
@@ -43,6 +65,20 @@ export default function ContentCartProduct() {
                     </div>
                 </div>
             </div>
+        </div>
+    </>;
+}
+
+export function SystemRequirements() {
+    return <>
+        <div className='system-requirement'>
+            <div className='right-part-text'><span className='left-part-text'>OS version: </span> ...</div>
+            <div className='right-part-text'><span className='left-part-text'>Processor: </span> ...</div>
+            <div className='right-part-text'><span className='left-part-text'>Memory: </span> ...</div>
+            <div className='right-part-text'><span className='left-part-text'>GPU: </span>    wefw.</div>
+            <div className='right-part-text'><span className='left-part-text'>DirectX: </span> ...</div>
+            <div className='right-part-text'><span className='left-part-text'>Storage: </span> ...</div>
+            <div className='right-part-text'><span className='left-part-text'>Additional input device: </span> ...</div>
         </div>
     </>;
 }
