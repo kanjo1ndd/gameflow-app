@@ -59,7 +59,7 @@ function App() {
           <Route path="/Category/:id" element={<Category />} />
           <Route path="/MyCart" element={<MyCart />} />
           <Route path="/Achievements" element={<Achievements />} />
-          <Route path="/Product" element={<CartProduct />} />
+          <Route path="/Product/:id" element={<CartProduct />} />
         </Routes>
       </AppContext.Provider>
    )

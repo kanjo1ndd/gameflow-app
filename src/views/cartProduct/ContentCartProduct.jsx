@@ -1,10 +1,28 @@
 import './ContentCartProduct.css'
 import '../wishlist/contentWishList/ContentWishList.css'
+import '../profile/contentProfile/ContentProfile.css'
+import { useEffect, useState, useContext } from "react";
+import { useParams } from 'react-router-dom';
+import { AppContext } from '../../AppContext';
 
 export default function ContentCartProduct() {
+
+    const { id } = useParams();
+
+    const [product, setProduct] = useState([]);
+    const { request } = useContext(AppContext);
+
+    useEffect (() => {
+        request("/api/shop/product/" + id)
+        .then(data => setProduct(data))
+        .catch(j => console.error(j));
+    }, [id]);
+
+    if (!product) return <div>Loading...</div>;
+
     return <>
         <div className='content-productCart'>
-            <div className='title-productCart'>Name Game</div>
+            <div className='title-productCart'>{product.name}</div>
             <div className='main-content-productCart'>
                 <div className='big-menu-productCart'>
                     <div className='block-for-img'>
@@ -29,7 +47,6 @@ export default function ContentCartProduct() {
                             <SystemRequirements />
                         </div>
                     </div>
-                    <div className='title-in-productCart'>Achievements</div>
                 </div>
                 <hr/>
                 <div className='mini-menu-Cart'>
@@ -65,6 +82,28 @@ export default function ContentCartProduct() {
                     </div>
                 </div>
             </div>
+            <div className='achievements-carts'>
+                <div className='title-in-productCart'>Achievements</div>
+                <div className='block-achievements-for-carts'>
+                    <AchievementsCart />
+                    <AchievementsCart />
+                    <AchievementsCart />
+                    <AchievementsCart />
+                    <AchievementsCart />
+                    <AchievementsCart />
+                </div>
+                <div className='show-achievements' onClick={() => navigate('/Achievements')}>Show more <i className="bi bi-arrow-right"></i></div>
+            </div>
+            <div className='comments-productCart'>
+                <div className='title-in-productCart'>Customer reviews</div>
+                <div>
+                    <div>Review score:</div>
+                    <div>
+                        ??? positive
+                        <div>(?? reviews)</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </>;
 }
@@ -79,6 +118,16 @@ export function SystemRequirements() {
             <div className='right-part-text'><span className='left-part-text'>DirectX: </span> ...</div>
             <div className='right-part-text'><span className='left-part-text'>Storage: </span> ...</div>
             <div className='right-part-text'><span className='left-part-text'>Additional input device: </span> ...</div>
+        </div>
+    </>;
+}
+
+export function AchievementsCart() {
+    return <>
+        <div className='block-achievements-cart'>
+            <div className='achievements-img'></div>
+            <div className='achievements-name'>Name achievement</div>
+            <div className='achievements-progress'>Completed by ???%</div>
         </div>
     </>;
 }

@@ -217,3 +217,14 @@
     position: relative;
 }
 /* Системные требования */
+
+/* Комментарии */
+.comments-productCart {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+
+    width: 79.167vw;
+    gap: 2vw;
+}
+/* Комментарии */
