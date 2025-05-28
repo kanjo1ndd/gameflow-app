@@ -296,6 +296,7 @@
     display: flex;
     position: relative;
     justify-content: space-between;
+    gap:1vw;
 }
 
 .icons-left-part {

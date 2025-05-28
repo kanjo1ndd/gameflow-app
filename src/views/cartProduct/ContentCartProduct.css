@@ -227,4 +227,42 @@
     width: 79.167vw;
     gap: 2vw;
 }
+
+.review-score {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 1.25vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: bottom;
+
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.sort-text {
+    display: flex;
+    position: relative;
+}
+
+.reviews-text {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 1.25vw;
+    letter-spacing: 0%;
+    vertical-align: bottom;
+
+
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.status-comments {
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 1.667vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: bottom;
+
+    color: rgba(123, 199, 77, 1);
+}
 /* Комментарии */

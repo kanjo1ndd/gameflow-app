@@ -33,9 +33,9 @@ export default function ContentCartProduct() {
                         <img className='mini-img-productCart'/>
                     </div>
                     <div className='title-in-productCart'>Aboit this game</div>
-                    <div className='description-in-productCart'>Description</div>
+                    <div className='description-in-productCart'>{product.description}</div>
                     <img className='big-img-productCart'/>
-                    <div className='description-in-productCart'>Description</div>
+                    <div className='description-in-productCart'>{product.description}</div>
                     <div className='title-in-productCart'>System Requirements</div>
                     <div className='block-system-requirements'>
                         <div className='system-requirements'>
@@ -63,17 +63,17 @@ export default function ContentCartProduct() {
                         </div>
                         <div className="block-flex-date-com">
                             <div>Release Date</div>
-                            <div>??.??.????</div>
+                            <div></div>
                         </div>
                     </div>
                     <div className='block-date-com'>
                         <div className="block-flex-date-com">
                             <div>Developer</div>
-                            <div>pixyda,inc.</div>
+                            <div>{product.developer}</div>
                         </div>
                         <div className="block-flex-date-com">
                             <div>Publisher</div>
-                            <div>pixyda,inc.</div>
+                            <div>{product.publisher}</div>
                         </div>
                     </div>
                     <div className='buttons-wishlist-addCart'>
@@ -97,12 +97,19 @@ export default function ContentCartProduct() {
             <div className='comments-productCart'>
                 <div className='title-in-productCart'>Customer reviews</div>
                 <div>
-                    <div>Review score:</div>
-                    <div>
-                        ??? positive
-                        <div>(?? reviews)</div>
+                    <div className='review-score'>Review score:</div>
+                    <div className='sort-text'>
+                        <span className='status-comments'>??? positive</span>
+                        <span className='reviews-text'>(?? reviews)</span>
                     </div>
                 </div>
+                <div className="block-sort">
+                    <div className="text-sort">Sort by:</div>
+                    <div className="list-by">
+                        On Sale
+                        <i className="bi bi-chevron-down"></i>
+                </div>
+            </div>
             </div>
         </div>
     </>;

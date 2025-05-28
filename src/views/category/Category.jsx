@@ -33,7 +33,7 @@ export default function Category() {
             <hr className='hr-category'/>
             <div className='container-product'>
                 {categories.products?.map(product => (
-                    <Product key={product.id} product={product} />
+                    <Product key={product.id} product={product} name={categories.name}/>
                 ))}
             </div>
         </div>
@@ -42,13 +42,13 @@ export default function Category() {
 }
 
 
-export function Product({ product }) {
+export function Product({ product, name }) {
     return <>
         <div className="block-game">
             <div className="block-game-left-part">
                 <img className="game-img" src={product.imagesCsv}/>
                 <div className="left-part-text">
-                    <div className="category-game">Category Game</div>
+                    <div className="category-game">{name} Game</div>
                     <div className="name-game">{product.name}</div>
                     <div className="block-date-com">
                         <div className="block-flex-date-com">
@@ -67,11 +67,7 @@ export function Product({ product }) {
                 </div>
             </div>
             <div className="block-game-right-part">
-                <div className="cost-game">UAH 0.00</div>
-                <div className="remove-button-add">
-                    <div className="remove">Remove</div>
-                    <button className="btn button-add-cart">Add to Cart</button>
-                </div>
+                <div className="cost-game">{product.price} UAH</div>
             </div>
         </div>
     </>;
