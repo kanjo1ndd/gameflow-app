@@ -58,7 +58,8 @@ export default function Header() {
                             )}
                         </div>
 
-                        <li className={`li ${location.pathname === '/News' ? 'active' : ''}`} >
+                        <li className={`li ${location.pathname === '/News' ? 'active' : ''}`} 
+                            onClick={() => navigate('/News')}>
                             News
                         </li>
                     </ul> 
@@ -76,7 +77,7 @@ export default function Header() {
                         onClick={() => navigate('/SignIn')}/>
                     <i className={`bi bi-cart3 ${location.pathname === '/MyCart' ? 'active' : ''}`} 
                         onClick={() => navigate('/SignIn')}/>
-                    <i className="bi bi-globe2"/>
+                    <i className='bi bi-globe2' onClick={() => navigate('/News')}/>
                     <button className='btn sign_in' onClick={() => navigate('/SignIn')}>Sign in</button>
                 </> : <>
                     <i className={`bi bi-person-circle ${location.pathname === '/Profile' ? 'active' : ''}`}
@@ -85,7 +86,8 @@ export default function Header() {
                         onClick={() => navigate('/WishList')}/>
                     <i className={`bi bi-cart3 ${location.pathname === '/MyCart' ? 'active' : ''}`} 
                         onClick={() => navigate('/MyCart')}/>
-                    <i className="bi bi-globe2"/>
+                    <i className={`bi bi-globe2 ${location.pathname === '/MyCart' ? 'active' : ''}`} 
+                        onClick={() => navigate('/News')}/>
                     <button className='btn sign_in' title={token} onClick={() => {setToken(null); navigate('/');}}>Sign out</button>
                 </>}
                 <button className='btn download'>Download</button>

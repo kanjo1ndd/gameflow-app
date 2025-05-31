@@ -13,6 +13,7 @@ import Category from './views/category/Category'
 import MyCart from './views/mycart/MyCart'
 import Achievements from './views/achievements/Achievements'
 import CartProduct from './views/cartProduct/cartProduct'
+import News from './views/news/News'
 
 function App() {
 
@@ -60,6 +61,7 @@ function App() {
           <Route path="/MyCart" element={<MyCart />} />
           <Route path="/Achievements" element={<Achievements />} />
           <Route path="/Product/:id" element={<CartProduct />} />
+          <Route path="/News" element={<News />} />
         </Routes>
       </AppContext.Provider>
    )

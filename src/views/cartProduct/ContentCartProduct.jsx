@@ -108,8 +108,8 @@ export default function ContentCartProduct() {
                     <div className="list-by">
                         On Sale
                         <i className="bi bi-chevron-down"></i>
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
     </>;

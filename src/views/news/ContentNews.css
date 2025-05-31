@@ -1,0 +1,35 @@
+.content-News {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    gap: 2.5vw;
+}
+
+.content-News > div:first-child {
+    margin-top: 2.5vw;
+}
+
+.content-News > div:last-child {
+    margin-bottom: 2.5vw;
+}
+
+.title-News {
+    width: 79.167vw;
+
+    display: flex;
+    position: relative;
+    gap: 2vw;
+
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 3.333vw;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: bottom;
+    color: white;
+}
