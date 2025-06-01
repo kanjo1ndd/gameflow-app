@@ -17,7 +17,7 @@ export default function Content() {
                     <button className='btn'>Learn more</button>
                 </div>
             </div>
-            <ContentBlock />
+            <ContentBlock url="/api/shop/topRatedProducts" title="Top Rated"/>
             <Conbl/>
             <ContentSale />
             <ConDeals />
@@ -31,7 +31,7 @@ export default function Content() {
                 </div>
             </div>
             <CategoryList />
-            <ContentBlock />
+            <ContentBlock url="/api/shop/newestProducts" title="Newest Releases" />
             <ContentBlock />
             <ContentBlock />
         </div>

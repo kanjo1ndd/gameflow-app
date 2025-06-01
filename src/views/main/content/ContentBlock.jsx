@@ -4,30 +4,36 @@ import { AppContext } from "../../../AppContext";
 
 /* Для 6-ти иконных */
 
-export default function ContentBlock() {
+export default function ContentBlock({ url, title }) {
+
+    const [products, setProduct] = useState([]);
+    const { request } = useContext(AppContext);
+
+    useEffect (() => {
+        request(url)
+        .then(data => setProduct(data))
+        .catch(j => console.error(j));
+    }, [url]);
 
     return <>
       <div className='content-div'>
-        <div className='category'>Category</div>  {/*категория*/}
+        <div className='category'>{title}</div>  {/*категория*/}
         <div className='cards'>
-            <Con />
-            <Con />
-            <Con />
-            <Con />
-            <Con />
-            <Con />
+            {products.slice(0, 6).map(product => (
+                <Con key={product.id} product={product} />
+            ))}
         </div>
       </div>
     </>;
 }
 
-export function Con() {
+export function Con({ product }) {
     return <>
         <div className='card'>
-            <img className='card-img' /> {/* изображение */}
-            <div className='card-subtitle'>Base Game</div>
-            <div className='card-title'>Name Game</div> {/* название */}
-            <div className='card-price'>UAH Price</div> {/* цена */}
+            <img className='card-img' src={product.imagesCsv}/> {/* изображение */}
+            <div className='card-subtitle'>{product.tags} Game</div>
+            <div className='card-title'>{product.name}</div> {/* название */}
+            <div className='card-price'>UAH {product.price}</div> {/* цена */}
         </div>
     </>;
 }
