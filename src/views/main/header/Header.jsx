@@ -5,6 +5,7 @@ import { AppContext } from '../../../AppContext';
 
 export default function Header() {
 
+    // Категории
     const navigate = useNavigate();
     const location = useLocation();
     const {token, setToken} = useContext(AppContext);
@@ -18,8 +19,34 @@ export default function Header() {
             .then(data => setCategory(data))
             .catch(console.error);
     }, []);
+    // Категории
 
-    const gameCategories = categories.map(cat => cat.name);
+    // Игры в поиске
+    const [searchTerm, setSearchTerm] = useState('');
+    const [searchResults, setSearchResults] = useState([]);
+
+    useEffect(() => {
+    const delayDebounce = setTimeout(() => {
+        if (!searchTerm.trim()) {
+            setSearchResults([]);
+            return;
+        }
+
+        request("/api/shop/allProducts")
+            .then(products => {
+                const filtered = products.filter(p =>
+                    p.name.toLowerCase().includes(searchTerm.toLowerCase())
+                );
+                setSearchResults(filtered.slice(0, 3));
+            })
+            .catch(console.error);
+        }, 300); 
+
+        return () => clearTimeout(delayDebounce);
+    }, [searchTerm]);
+    // Игры в поиске
+
+    // const gameCategories = categories.map(cat => cat.name);
 
     return <>
         <div className='head'>
@@ -66,7 +93,22 @@ export default function Header() {
                 </nav>
                 <div>
                     <i className="bi bi-search"></i>
-                    <input placeholder='Search store'></input>
+                    <input
+                        placeholder="Search store"
+                        value={searchTerm}
+                        onChange={e => setSearchTerm(e.target.value)}
+                        onKeyDown={() => {}}
+                    />
+                    {searchResults.length > 0 && (
+                        <div className="search-results">
+                            {searchResults.map((game, index) => (
+                            <div key={index} className="search-result-item" onClick={() => navigate(`/Product/${game.slug}`)}>
+                                <img src={game.imagesCsv} />
+                                <div>{game.name}</div>
+                            </div>
+                            ))}
+                        </div>
+                    )}
                 </div>
             </div>
             <div className='reg'>

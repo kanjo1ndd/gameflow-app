@@ -32,8 +32,8 @@ export default function Content() {
             </div>
             <CategoryList />
             <ContentBlock url="/api/shop/newestProducts" title="Newest Releases" />
-            <ContentBlock />
-            <ContentBlock />
+            <ContentBlock url="/api/shop/topRatedProducts" title="Top Rated"/>
+            <ContentBlock url="/api/shop/topRatedProducts" title="Top Rated"/>
         </div>
     </>;
 }
