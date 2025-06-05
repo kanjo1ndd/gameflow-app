@@ -263,3 +263,53 @@
 .dropdown-item:hover {
     filter: brightness(0.8);
 }
+
+
+/* Список игр в поиске */
+.search-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 36.5%;
+    background-color: rgb(49, 56, 66);
+    border: none;
+    border-radius: 0 0 0.228vw 0.228vw;
+    width: 20vw;
+    z-index: 10000;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.search-dropdown .dropdown-item {
+    display: flex;
+    width: 100%;
+    background-color: rgb(49, 56, 66);
+    box-sizing: border-box; 
+    align-items: center;
+    padding: 0.25vw;
+    gap: 1vw;
+    cursor: pointer;
+}
+
+
+.search-dropdown .dropdown-item:hover {
+    
+}
+
+.search-dropdown .dropdown-item img {
+    width: 2vw;
+    border-radius: 0.25vw;
+}
+
+.name-price-text {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 0.85vw;
+    color: white;
+}
+/* Список игр в поиске */

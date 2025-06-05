@@ -99,17 +99,20 @@ export default function Header() {
                         onChange={e => setSearchTerm(e.target.value)}
                         onKeyDown={() => {}}
                     />
-                    {searchResults.length > 0 && (
-                        <div className="search-results">
-                            {searchResults.map((game, index) => (
-                            <div key={index} className="search-result-item" onClick={() => navigate(`/Product/${game.slug}`)}>
-                                <img src={game.imagesCsv} />
-                                <div>{game.name}</div>
-                            </div>
-                            ))}
-                        </div>
-                    )}
                 </div>
+                {searchResults.length > 0 && (
+                    <ul className="search-dropdown">
+                        {searchResults.map((game, index) => (
+                            <li key={index} className="dropdown-item" onClick={() => navigate(`/Product/${game.slug}`)}>
+                                <img src={game.imagesCsv} />
+                                <div className='name-price-text'>
+                                    <span>{game.name}</span>
+                                    <span>{game.price} UAH</span>
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
+                )}
             </div>
             <div className='reg'>
                 {token == null ? <>
