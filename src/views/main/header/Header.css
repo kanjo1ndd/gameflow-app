@@ -267,6 +267,8 @@
 
 /* Список игр в поиске */
 .search-dropdown {
+    display: flex;
+    flex-direction: column;
     position: absolute;
     top: 100%;
     left: 36.5%;
@@ -280,25 +282,27 @@
     margin: 0;
 }
 
-.search-dropdown .dropdown-item {
+.search-dropdown .dropdown-itemSearch {
     display: flex;
+    position: relative;
     width: 100%;
     background-color: rgb(49, 56, 66);
-    box-sizing: border-box; 
     align-items: center;
-    padding: 0.25vw;
     gap: 1vw;
     cursor: pointer;
+    border-radius: 0px;
 }
 
-
-.search-dropdown .dropdown-item:hover {
-    
-}
-
-.search-dropdown .dropdown-item img {
+.search-dropdown .dropdown-itemSearch img {
+    display: flex;
+    margin: 0.25vw 0 0.25vw 0.45vw;
     width: 2vw;
-    border-radius: 0.25vw;
+    height: 3vw;
+    border-radius: 0.2vw;
+}
+
+.dropdown-itemSearch:hover {
+    filter: brightness(0.8);
 }
 
 .name-price-text {
@@ -310,6 +314,13 @@
     font-family: Roboto;
     font-weight: 600;
     font-size: 0.85vw;
+    color: white;
+}
+
+.name-price-text .price {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 0.75vw;
     color: white;
 }
 /* Список игр в поиске */

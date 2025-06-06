@@ -63,7 +63,7 @@ export default function ContentCartProduct() {
                         </div>
                         <div className="block-flex-date-com">
                             <div>Release Date</div>
-                            <div></div>
+                            <div>{product.releaseDate.slice(0, 10)}</div>
                         </div>
                     </div>
                     <div className='block-date-com'>

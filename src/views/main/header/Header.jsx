@@ -103,11 +103,11 @@ export default function Header() {
                 {searchResults.length > 0 && (
                     <ul className="search-dropdown">
                         {searchResults.map((game, index) => (
-                            <li key={index} className="dropdown-item" onClick={() => navigate(`/Product/${game.slug}`)}>
+                            <li key={index} className="dropdown-itemSearch" onClick={() => navigate(`/Product/${game.id}`)}>
                                 <img src={game.imagesCsv} />
                                 <div className='name-price-text'>
-                                    <span>{game.name}</span>
-                                    <span>{game.price} UAH</span>
+                                    <span className='name'>{game.name}</span>
+                                    <span className='price'>{game.price} UAH</span>
                                 </div>
                             </li>
                         ))}
